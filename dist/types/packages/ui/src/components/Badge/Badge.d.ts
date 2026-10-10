@@ -1,0 +1,25 @@
+import { type MouseEvent, type ReactNode } from 'react';
+import './Badge.css';
+export type BadgeSize = 'xs' | 'sm' | 'default' | 'lg';
+export type BadgeTone = 'neutral' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
+export type BadgeVariant = 'solid' | 'soft' | 'outline' | 'light';
+export type BadgeShape = 'rounded' | 'pill' | 'square';
+export type BadgeProps = {
+    'aria-label'?: string;
+    className?: string;
+    count?: number | string;
+    dot?: boolean;
+    disabled?: boolean;
+    icon?: ReactNode;
+    loading?: boolean;
+    max?: number;
+    onClick?: (event: MouseEvent<HTMLSpanElement>) => void;
+    onRemove?: (event: MouseEvent<HTMLButtonElement>) => void;
+    removable?: boolean;
+    showZero?: boolean;
+    shape?: BadgeShape;
+    size?: BadgeSize;
+    tone?: BadgeTone;
+    variant?: BadgeVariant;
+};
+export declare function Badge({ 'aria-label': ariaLabel, className, count, dot, disabled, icon, loading, max, onClick, onRemove, removable, showZero, shape, size, tone, variant, }: BadgeProps): import("react").JSX.Element | null;

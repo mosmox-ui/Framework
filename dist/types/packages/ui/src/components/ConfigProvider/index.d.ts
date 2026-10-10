@@ -1,0 +1,2 @@
+export { ConfigProvider, useConfig } from './ConfigProvider';
+export type { ActivityFeedConfig, BannerConfig, ButtonConfig, ButtonMenuConfig, CodeBlockConfig, ComponentConfig, ConfigProviderProps, ConfirmationDialogConfig, CookieBannerConfig, EmptyConfig, FileUploadConfig, FormConfig, LightboxConfig, ListConfig, Locale, NavigationMenuConfig, PricingTableConfig, ProfileMenuConfig, RadioCardConfig, ScrollAreaConfig, SkeletonConfig, TableConfig, TabsConfig, ThemeConfig, ThemeSwitcherConfig, ToolbarConfig } from './ConfigProvider';

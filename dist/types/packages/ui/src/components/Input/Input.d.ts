@@ -1,0 +1,22 @@
+import { type InputHTMLAttributes, type ReactNode } from 'react';
+import './Input.css';
+export type InputSize = 'xs' | 'sm' | 'default';
+export type InputVariant = 'outline' | 'filled';
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+    clearable?: boolean;
+    description?: string;
+    error?: string;
+    fullWidth?: boolean;
+    inputClassName?: string;
+    label?: string;
+    leadingIcon?: ReactNode;
+    loading?: boolean;
+    onClear?: () => void;
+    prefix?: ReactNode;
+    size?: InputSize;
+    suffix?: ReactNode;
+    trailingActions?: ReactNode;
+    trailingIcon?: ReactNode;
+    variant?: InputVariant;
+};
+export declare const Input: import("react").NamedExoticComponent<InputProps>;

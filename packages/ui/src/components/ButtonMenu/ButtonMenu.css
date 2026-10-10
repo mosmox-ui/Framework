@@ -1,0 +1,9 @@
+.mm-button-menu { display: inline-flex; position: relative; }
+.mm-button-menu__popover { position: absolute; z-index: 20; }
+.mm-button-menu--bottom-start .mm-button-menu__popover { left: 0; top: calc(100% + 6px); }
+.mm-button-menu--bottom-end .mm-button-menu__popover { right: 0; top: calc(100% + 6px); }
+.mm-button-menu--top-start .mm-button-menu__popover { bottom: calc(100% + 6px); left: 0; }
+.mm-button-menu--top-end .mm-button-menu__popover { bottom: calc(100% + 6px); right: 0; }
+.mm-button-menu--match-trigger, .mm-button-menu--match-trigger > .mm-button { width: 100%; }
+.mm-button-menu--match-trigger .mm-button-menu__popover { min-width: 100%; }
+.mm-button-menu--match-trigger .mm-button-menu__popover .mm-menu { min-width: 100%; }

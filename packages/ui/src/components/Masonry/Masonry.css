@@ -1,0 +1,10 @@
+.mm-masonry { column-count: var(--mm-masonry-columns, 3); column-gap: var(--mm-masonry-column-gap, 16px); column-width: auto; orphans: 1; widows: 1; }
+.mm-masonry--width-driven { column-count: auto; column-width: var(--mm-masonry-column-width, 240px); }
+.mm-masonry__item { break-inside: avoid; display: block; margin: 0 0 var(--mm-masonry-row-gap, 16px); width: 100%; }
+.mm-masonry__item:last-child { margin-bottom: 0; }
+@media (min-width: 0px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-xs-columns, var(--mm-masonry-columns, 3)); } }
+@media (min-width: 576px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-sm-columns, var(--mm-masonry-xs-columns, var(--mm-masonry-columns, 3))); } }
+@media (min-width: 768px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-md-columns, var(--mm-masonry-sm-columns, var(--mm-masonry-columns, 3))); } }
+@media (min-width: 992px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-lg-columns, var(--mm-masonry-md-columns, var(--mm-masonry-columns, 3))); } }
+@media (min-width: 1200px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-xl-columns, var(--mm-masonry-lg-columns, var(--mm-masonry-columns, 3))); } }
+@media (min-width: 1600px) { .mm-masonry:not(.mm-masonry--width-driven) { column-count: var(--mm-masonry-xxl-columns, var(--mm-masonry-xl-columns, var(--mm-masonry-columns, 3))); } }

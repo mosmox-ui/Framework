@@ -1,0 +1,26 @@
+import { type HTMLAttributes, type ReactNode } from 'react';
+import './CodeBlock.css';
+export type CodeBlockSize = 'sm' | 'default' | 'lg';
+export type CodeBlockTheme = 'light' | 'dark' | 'black' | 'github' | 'solarized' | 'dracula' | 'nord' | 'monokai' | 'ocean' | 'high-contrast';
+export type CodeBlockProps = Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'title'> & {
+    code: string;
+    language?: string;
+    title?: ReactNode;
+    showHeader?: boolean;
+    showLineNumbers?: boolean;
+    lineNumberStart?: number;
+    onLineClick?: (lineNumber: number, code: string) => void;
+    highlightLines?: number[];
+    wrap?: boolean;
+    copyable?: boolean;
+    copyLabel?: string;
+    copiedLabel?: string;
+    onCopy?: (code: string) => void;
+    size?: CodeBlockSize;
+    theme?: CodeBlockTheme;
+    syntaxHighlight?: boolean;
+    radius?: number | string;
+    maxHeight?: number | string;
+    tabSize?: number;
+};
+export declare function CodeBlock({ code, language, title, showHeader, showLineNumbers, lineNumberStart, onLineClick, highlightLines, wrap, copyable, copyLabel, copiedLabel, onCopy, size, theme, syntaxHighlight, radius, maxHeight, tabSize, className, style, ...rest }: CodeBlockProps): import("react").JSX.Element;

@@ -1,0 +1,37 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import './ResizablePanels.css';
+export type ResizablePanelsDirection = 'horizontal' | 'vertical';
+export type ResizablePanelsVariant = 'default' | 'card' | 'separated' | 'minimal';
+export type ResizablePanel = {
+    key: string;
+    content: ReactNode;
+    minSize?: number;
+    maxSize?: number;
+    defaultSize?: number;
+    collapsible?: boolean;
+    collapsedSize?: number;
+    collapsedMinSize?: number;
+    collapseIcon?: ReactNode;
+    expandIcon?: ReactNode;
+    ariaLabel?: string;
+};
+export type ResizablePanelsProps = {
+    'aria-label'?: string;
+    panels: ResizablePanel[];
+    direction?: ResizablePanelsDirection;
+    sizes?: number[];
+    defaultSizes?: number[];
+    onResize?: (sizes: number[], index: number) => void;
+    step?: number;
+    handleSize?: number;
+    handleContent?: ReactNode;
+    showHandle?: boolean;
+    showCollapseButtons?: boolean;
+    keyboardResize?: boolean;
+    resetOnDoubleClick?: boolean;
+    storageKey?: string;
+    variant?: ResizablePanelsVariant;
+    className?: string;
+    style?: CSSProperties;
+};
+export declare function ResizablePanels({ 'aria-label': ariaLabel, panels, direction, sizes, defaultSizes, onResize, step, handleSize, handleContent, showHandle, showCollapseButtons, keyboardResize, resetOnDoubleClick, storageKey, variant, className, style }: ResizablePanelsProps): import("react").JSX.Element;

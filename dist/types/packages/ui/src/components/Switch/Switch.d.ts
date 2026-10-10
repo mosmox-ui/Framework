@@ -1,0 +1,24 @@
+import { type InputHTMLAttributes, type ReactNode } from 'react';
+import './Switch.css';
+export type SwitchSize = 'default' | 'sm' | 'xs';
+export type SwitchTone = 'primary' | 'success' | 'warning' | 'danger';
+export type SwitchStatus = 'success' | 'warning';
+export type SwitchLabelPosition = 'left' | 'right';
+export type SwitchProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> & {
+    checkedLabel?: ReactNode;
+    description?: string;
+    error?: string;
+    label?: ReactNode;
+    labelPosition?: SwitchLabelPosition;
+    loading?: boolean;
+    loadingLabel?: ReactNode;
+    offIcon?: ReactNode;
+    offLabel?: ReactNode;
+    onIcon?: ReactNode;
+    onLabel?: ReactNode;
+    readOnly?: boolean;
+    size?: SwitchSize;
+    status?: SwitchStatus;
+    tone?: SwitchTone;
+};
+export declare const Switch: import("react").NamedExoticComponent<SwitchProps>;

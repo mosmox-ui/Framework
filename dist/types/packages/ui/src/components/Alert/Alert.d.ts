@@ -1,0 +1,26 @@
+import { type ReactNode } from 'react';
+import './Alert.css';
+export type AlertVariant = 'neutral' | 'success' | 'warning' | 'danger';
+export type AlertPlacement = 'top' | 'center';
+export type AlertSize = 'sm' | 'default';
+export type AlertExitAnimation = 'none' | 'top' | 'bottom' | 'left' | 'right';
+export type AlertProps = {
+    'aria-label'?: string;
+    children?: ReactNode;
+    className?: string;
+    confirmIcon?: ReactNode;
+    confirmLabel?: ReactNode;
+    defaultOpen?: boolean;
+    exitAnimation?: AlertExitAnimation;
+    icon?: ReactNode;
+    id?: string;
+    onClose?: () => void;
+    onConfirm?: () => void;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    placement?: AlertPlacement;
+    size?: AlertSize;
+    title?: ReactNode;
+    variant?: AlertVariant;
+};
+export declare function Alert({ 'aria-label': ariaLabel, children, className, confirmIcon, confirmLabel, defaultOpen, exitAnimation, icon, id, onClose, onConfirm, onOpenChange, open, placement, size, title, variant, }: AlertProps): import("react").JSX.Element;

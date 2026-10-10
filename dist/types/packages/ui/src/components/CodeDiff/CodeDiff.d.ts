@@ -1,0 +1,27 @@
+import { type HTMLAttributes, type ReactNode } from 'react';
+import type { CodeBlockSize, CodeBlockTheme } from '../CodeBlock';
+import './CodeDiff.css';
+export type CodeDiffView = 'unified' | 'split';
+export type CodeDiffProps = Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'title'> & {
+    oldCode?: string;
+    newCode?: string;
+    diff?: string;
+    language?: string;
+    title?: ReactNode;
+    oldLabel?: ReactNode;
+    newLabel?: ReactNode;
+    view?: CodeDiffView;
+    showHeader?: boolean;
+    showLineNumbers?: boolean;
+    copyable?: boolean;
+    copyLabel?: string;
+    copiedLabel?: string;
+    onCopy?: (code: string) => void;
+    size?: CodeBlockSize;
+    theme?: CodeBlockTheme;
+    wrap?: boolean;
+    radius?: number | string;
+    maxHeight?: number | string;
+    onLineClick?: (lineNumber: number, content: string, kind: 'added' | 'removed' | 'context') => void;
+};
+export declare function CodeDiff({ oldCode, newCode, diff, language, title, oldLabel, newLabel, view, showHeader, showLineNumbers, copyable, copyLabel, copiedLabel, onCopy, size, theme, wrap, radius, maxHeight, onLineClick, className, style, ...rest }: CodeDiffProps): import("react").JSX.Element;

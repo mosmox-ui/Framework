@@ -1,0 +1,26 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import './Tooltip.css';
+export type TooltipPlacement = 'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end';
+export type TooltipSize = 'sm' | 'default' | 'lg';
+export type TooltipVariant = 'dark' | 'light' | 'primary';
+export type TooltipProps = {
+    'aria-label'?: string;
+    arrow?: boolean;
+    children: ReactNode;
+    className?: string;
+    closeDelay?: number;
+    closeOnEscape?: boolean;
+    content: ReactNode;
+    defaultOpen?: boolean;
+    disabled?: boolean;
+    interactive?: boolean;
+    maxWidth?: CSSProperties['maxWidth'];
+    offset?: number;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    openDelay?: number;
+    placement?: TooltipPlacement;
+    size?: TooltipSize;
+    variant?: TooltipVariant;
+};
+export declare function Tooltip({ 'aria-label': ariaLabel, arrow, children, className, closeDelay, closeOnEscape, content, defaultOpen, disabled, interactive, maxWidth, offset, onOpenChange, open: controlledOpen, openDelay, placement, size, variant, }: TooltipProps): import("react").JSX.Element;

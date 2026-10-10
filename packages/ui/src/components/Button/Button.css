@@ -1,0 +1,87 @@
+.mm-button {
+  --mm-button-bg: var(--mm-color-primary);
+  --mm-button-fg: var(--mm-color-white);
+  --mm-text-primary: var(--mm-color-text);
+  --mm-button-border: transparent;
+  --mm-button-hover: var(--mm-color-primary-hover);
+  --mm-button-shadow: 0 1px 2px rgb(16 24 40 / 8%), 0 1px 3px rgb(16 24 40 / 8%);
+  --mm-progress-track: rgb(12 21 24 / 16%);
+  align-items: center;
+  border: 1px solid var(--mm-button-border);
+  border-radius: var(--mm-button-radius, var(--mm-radius-control));
+  box-shadow: var(--mm-button-shadow);
+  color: var(--mm-button-fg);
+  cursor: pointer;
+  display: inline-flex;
+  font: var(--mm-font-weight-normal) 14px/20px var(--mm-font-family-sans);
+  gap: var(--mm-button-gap, var(--mm-space-control-gap));
+  justify-content: center;
+  min-width: max-content;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.mm-button:active:not(:disabled):not([aria-disabled='true']) {
+  box-shadow: none;
+  transform: translateY(0);
+  transition: none;
+}
+.mm-button:hover:not(:active):not(:disabled):not([aria-disabled='true']):not(.mm-button--disable-hover):not(.mm-button--hover-scale) { transform: translateY(-2px); }
+.mm-button--hover-scale:not(.mm-button--disable-hover):hover:not(:active):not(:disabled):not([aria-disabled='true']) .mm-button__content { transform: scale(1.06); }
+.mm-button:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-focus) 22%, transparent), var(--mm-button-shadow); }
+.mm-button:disabled, .mm-button[aria-disabled='true'] { cursor: not-allowed; opacity: .5; }
+
+.mm-button--xs { --mm-button-y-padding: 3px; font-size: 12px; font-weight: 300; line-height: 16px; min-height: 28px; padding: var(--mm-button-y-padding) calc(var(--mm-button-y-padding) * 2.5); }
+.mm-button--sm { --mm-button-y-padding: 6px; font-size: 13px; font-weight: 300; line-height: 18px; min-height: 34px; padding: var(--mm-button-y-padding) calc(var(--mm-button-y-padding) * 2); }
+.mm-button--default { --mm-button-y-padding: 9px; min-height: 40px; padding: var(--mm-button-y-padding) calc(var(--mm-button-y-padding) * 2); }
+.mm-button--full-width { width: 100%; }
+.mm-button--icon-only { aspect-ratio: 1; padding-inline: 0; }
+.mm-button--circle { border-radius: 50%; }
+.mm-button--icon-only.mm-button--xs { width: 28px; }
+.mm-button--icon-only.mm-button--sm { width: 34px; }
+.mm-button--icon-only.mm-button--default { width: 40px; }
+
+.mm-button--primary { --mm-button-bg: var(--mm-color-primary); --mm-button-hover: var(--mm-color-primary-hover); --mm-progress-color: var(--mm-color-light-background); --mm-progress-track: rgb(246 246 247 / 34%); background: var(--mm-button-bg); }
+.mm-button--secondary { --mm-button-bg: var(--mm-color-secondary); --mm-button-hover: var(--mm-color-secondary-hover); --mm-progress-color: var(--mm-color-light-background); --mm-progress-track: rgb(246 246 247 / 34%); background: var(--mm-button-bg); }
+.mm-button--danger { --mm-button-fg: var(--mm-color-danger-text); --mm-button-border: var(--mm-color-danger-background); --mm-button-hover: var(--mm-color-danger-hover); --mm-progress-color: var(--mm-color-danger-text); --mm-progress-track: rgb(255 255 255 / 24%); background: var(--mm-color-danger-background); box-shadow: none; }
+.mm-button--success { --mm-button-bg: var(--mm-color-success); --mm-button-hover: var(--mm-color-success-hover); --mm-progress-color: var(--mm-color-light-background); --mm-progress-track: rgb(246 246 247 / 34%); background: var(--mm-button-bg); }
+.mm-button--light { --mm-button-fg: var(--mm-text-primary); --mm-button-hover: var(--mm-color-light-hover); --mm-progress-color: var(--mm-color-primary); --mm-progress-track: rgb(0 50 49 / 18%); background: var(--mm-color-light-background); box-shadow: none; }
+.mm-button--outline { --mm-button-fg: var(--mm-text-primary); --mm-button-border: var(--mm-color-outline-border); --mm-button-hover: var(--mm-color-surface-hover); --mm-progress-color: var(--mm-color-secondary); --mm-progress-track: rgb(71 99 76 / 18%); background: var(--mm-color-surface); box-shadow: none; }
+.mm-button--dashed { --mm-button-fg: var(--mm-text-primary); --mm-button-border: var(--mm-color-primary); --mm-button-hover: var(--mm-color-surface-hover); --mm-progress-color: var(--mm-color-primary); --mm-progress-track: rgb(0 50 49 / 18%); background: var(--mm-color-surface); border-style: dashed; box-shadow: none; }
+.mm-button--text { --mm-button-fg: var(--mm-text-primary); --mm-button-hover: transparent; background: transparent; box-shadow: none; padding-inline: calc(var(--mm-button-y-padding) * 2); }
+.mm-button--text:active:not(:disabled):not([aria-disabled='true']) { background: transparent; box-shadow: none; transform: translateY(0); }
+.mm-button--link { --mm-button-fg: var(--mm-color-link); --mm-button-hover: transparent; background: transparent; box-shadow: none; padding-inline: 0; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
+.mm-button--link:active:not(:disabled):not([aria-disabled='true']) { box-shadow: none; transform: none; }
+
+.mm-button__spinner { animation: mm-button-spin .8s linear infinite; height: 16px; width: 16px; }
+.mm-button__content { align-items: center; display: inline-flex; gap: 8px; transition: transform 160ms ease; }
+.mm-button__shortcut { background: color-mix(in srgb, currentColor 10%, transparent); border: 1px solid color-mix(in srgb, currentColor 24%, transparent); border-radius: 4px; font: inherit; font-size: .82em; line-height: 1; padding: 3px 5px; }
+.mm-button__content > svg:not(.mm-button__spinner) { height: 16px; width: 16px; }
+.mm-button--loading { pointer-events: none; }
+.mm-button--loading-replace { min-width: 112px; }
+.mm-button--loading-replace { overflow: hidden; }
+.mm-button--loading-replace .mm-button__content--default { animation: mm-button-content-exit .45s ease forwards; position: absolute; }
+.mm-button--loading-replace .mm-button__content--loading { animation: mm-button-loader-enter .45s ease forwards; }
+.mm-button--loading-replace .mm-button__spinner { margin-inline: auto; }
+.mm-button__icon-transition { display: inline-flex; height: 16px; overflow: hidden; position: relative; width: 16px; }
+.mm-button__icon-transition-old, .mm-button__icon-transition-loader { align-items: center; display: inline-flex; height: 16px; justify-content: center; width: 16px; }
+.mm-button__icon-transition-loader { inset: 0; position: absolute; transform: translateY(-100%); }
+.mm-button--loading:not(.mm-button--loading-replace) .mm-button__icon-transition-old { animation: mm-button-icon-exit-down .4s ease forwards; }
+.mm-button--loading:not(.mm-button--loading-replace) .mm-button__icon-transition-loader { animation: mm-button-icon-enter-down .4s ease forwards; }
+.mm-button--with-progress { overflow: hidden; }
+.mm-button--with-progress:disabled { opacity: 1; }
+.mm-button__progress-label { font-variant-numeric: tabular-nums; }
+.mm-button__progress-track { background: var(--mm-progress-track); bottom: 0; height: 3px; left: 0; overflow: hidden; position: absolute; width: 100%; z-index: 1; }
+.mm-button__progress-value { background: var(--mm-progress-color, currentColor); display: block; height: 100%; transition: width 220ms ease; }
+.mm-button__sr-only { height: 1px; margin: -1px; overflow: hidden; position: absolute; width: 1px; clip: rect(0, 0, 0, 0); }
+
+@keyframes mm-button-spin { to { transform: rotate(360deg); } }
+@keyframes mm-button-content-exit { to { opacity: 0; transform: translateX(120%); } }
+@keyframes mm-button-loader-enter { from { opacity: 0; transform: translateX(-120%); } to { opacity: 1; transform: translateX(0); } }
+@keyframes mm-button-icon-exit-down { to { opacity: 0; transform: translateY(100%); } }
+@keyframes mm-button-icon-enter-down { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .mm-button, .mm-button__content { transition: none; } .mm-button__spinner { animation-duration: 1.5s; } }

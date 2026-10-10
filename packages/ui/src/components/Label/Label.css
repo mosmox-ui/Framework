@@ -1,0 +1,25 @@
+.mm-label-field { color: var(--mm-color-text); display: inline-grid; font-family: var(--mm-font-family-sans); gap: 3px; max-width: 100%; vertical-align: top; }
+.mm-label-field__content { align-items: center; display: inline-flex; gap: var(--mm-space-control-gap); min-width: 0; }
+.mm-label-field__text { min-width: 0; }
+.mm-label-field__content--truncate .mm-label-field__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mm-label-field__icon { align-items: center; color: var(--mm-color-control-icon); display: inline-flex; flex: 0 0 auto; justify-content: center; }
+.mm-label-field__required { color: var(--mm-color-danger); font-weight: var(--mm-font-weight-medium); }
+.mm-label-field__optional { color: var(--mm-color-muted-text); font-size: .9em; font-weight: var(--mm-font-weight-normal); }
+.mm-label-field__detail { color: var(--mm-color-muted-text); font-size: 12px; font-weight: var(--mm-font-weight-normal); line-height: 16px; }
+.mm-label-field__detail--error { color: var(--mm-color-danger-text); }
+.mm-label-field--xs { font-size: 11px; line-height: 16px; }
+.mm-label-field--sm { font-size: 12px; line-height: 18px; }
+.mm-label-field--default { font-size: 14px; line-height: 20px; }
+.mm-label-field--lg { font-size: 16px; line-height: 24px; }
+.mm-label-field--normal { font-weight: var(--mm-font-weight-normal); }
+.mm-label-field--medium { font-weight: var(--mm-font-weight-medium); }
+.mm-label-field--semibold { font-weight: 600; }
+.mm-label-field--muted { color: var(--mm-color-muted-text); }
+.mm-label-field--danger { color: var(--mm-color-danger-text); }
+.mm-label-field--success { color: var(--mm-color-success); }
+.mm-label-field--warning { color: var(--mm-color-warning-text); }
+.mm-label-field--disabled { color: var(--mm-color-placeholder); cursor: not-allowed; }
+.mm-label-field--disabled .mm-label-field__detail { color: var(--mm-color-placeholder); }
+.mm-label-field--visually-hidden { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.mm-label-field--visually-hidden .mm-label-field__detail { display: none; }
+.mm-label-field:has(+ input:disabled), .mm-label-field:has(+ textarea:disabled), .mm-label-field:has(+ select:disabled) { cursor: not-allowed; }

@@ -1,0 +1,24 @@
+import { type Locale } from '../ConfigProvider';
+import type { ReactNode } from 'react';
+import './Empty.css';
+export type EmptySize = 'sm' | 'default';
+export type EmptyLocale = Locale;
+export type EmptyProps = {
+    'aria-label'?: string;
+    actions?: ReactNode;
+    bordered?: boolean;
+    children?: ReactNode;
+    className?: string;
+    content?: ReactNode;
+    description?: ReactNode;
+    fullWidth?: boolean;
+    image?: ReactNode;
+    imageContent?: ReactNode;
+    imageAlt?: string;
+    imageSrc?: string;
+    locale?: EmptyLocale;
+    size?: EmptySize;
+    subtitle?: ReactNode;
+    title?: ReactNode;
+};
+export declare function Empty({ 'aria-label': ariaLabel, actions, bordered, children, className, content, description, fullWidth, image, imageContent, imageAlt, imageSrc, locale, size, subtitle, title, }: EmptyProps): import("react").JSX.Element;

@@ -1,0 +1,11 @@
+.mm-form { display: grid; gap: 20px; width: 100%; }
+.mm-form--horizontal { grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr); }
+.mm-form--inline { align-items: end; display: flex; flex-wrap: wrap; }
+.mm-form--sm { gap: 12px; }
+.mm-form--lg { gap: 28px; }
+.mm-form--disabled { opacity: .65; pointer-events: none; }
+.mm-form__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mm-form__actions--start { justify-content: flex-start; }
+.mm-form__actions--center { justify-content: center; }
+.mm-form__actions--end { justify-content: flex-end; }
+.mm-form__actions--between { justify-content: space-between; }

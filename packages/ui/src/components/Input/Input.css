@@ -1,0 +1,62 @@
+.mm-input-field {
+  --mm-input-border: var(--mm-color-control-border);
+  --mm-input-background: var(--mm-color-surface);
+  --mm-input-focus: var(--mm-color-primary);
+  color: var(--mm-color-text);
+  display: grid;
+  gap: 6px;
+  font-family: var(--mm-font-family-sans);
+  min-width: 100px;
+}
+.mm-input-field--full-width { width: 100%; }
+.mm-input-field__label { font-size: 14px; font-weight: var(--mm-font-weight-medium); line-height: 20px; }
+.mm-input-field__description, .mm-input-field__error { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-input-field__counter { color: var(--mm-color-muted-text); font-size: 12px; line-height: 16px; margin: -2px 0 0; text-align: right; }
+.mm-input-field__description { color: var(--mm-color-muted-text); }
+.mm-input-field__error { color: var(--mm-color-danger-text); }
+.mm-input { align-items: center; background: var(--mm-input-background); border: 1px solid var(--mm-input-border); border-radius: var(--mm-radius-control); display: flex; gap: var(--mm-space-control-icon-gap); min-width: 0; overflow: hidden; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.mm-input--has-leading-icon { padding-inline-start: var(--mm-space-control-gap); }
+.mm-input--has-trailing-icon { padding-inline-end: var(--mm-space-control-gap); }
+.mm-input:has(.mm-input-password__actions) { padding-inline-end: 0; }
+.mm-input:has(.mm-input-password__actions) { column-gap: 0; }
+.mm-input:has(.mm-input-password__actions) > .mm-input__control { margin-inline-end: var(--mm-space-control-icon-gap); }
+.mm-input:has(.mm-input-password__actions) > .mm-input__adornment--prefix { margin-inline-end: var(--mm-space-control-icon-gap); }
+.mm-input:has(.mm-input-password__actions) > .mm-input__adornment--suffix { margin-inline-end: var(--mm-space-control-icon-gap); }
+.mm-input:has(.mm-input__icon--interactive) { column-gap: 0; padding-inline-end: 0; }
+.mm-input:has(> .mm-input__action) { padding-inline-end: 0; }
+.mm-input:has(> .mm-input__action) > .mm-input__action { margin-inline-end: 0; }
+.mm-input:focus-within { border-color: var(--mm-input-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-input-focus) 16%, transparent); }
+.mm-input--error { --mm-input-border: var(--mm-color-danger-text); --mm-input-focus: var(--mm-color-danger-text); }
+.mm-input--filled { --mm-input-background: var(--mm-color-control-filled); border-color: transparent; }
+.mm-input--xs { min-height: 28px; padding: 3px 6px; }
+.mm-input--sm { min-height: 34px; padding: 6px 10px; }
+.mm-input--default { min-height: 40px; padding: 9px 14px; }
+.mm-input__control { background: transparent; border: 0; color: inherit; flex: 1; font: var(--mm-font-weight-normal) 14px/20px var(--mm-font-family-sans); min-width: 0; outline: 0; padding: 0; }
+.mm-input--xs .mm-input__control { font-size: 12px; line-height: 16px; }
+.mm-input--sm .mm-input__control { font-size: 13px; line-height: 18px; }
+.mm-input__control::placeholder { color: var(--mm-color-placeholder); }
+.mm-input__icon { align-items: center; color: var(--mm-color-control-icon); display: inline-flex; flex: 0 0 var(--mm-size-icon); height: var(--mm-size-icon); justify-content: center; width: var(--mm-size-icon); }
+.mm-input__icon > svg { height: var(--mm-size-icon); width: var(--mm-size-icon); }
+.mm-input__icon--interactive { align-self: stretch; background: transparent; border-inline-start: 1px solid color-mix(in srgb, var(--mm-color-control-border) 35%, var(--mm-color-control-filled)); color: var(--mm-color-control-icon); flex: 0 0 32px; height: auto; margin-block: -9px; transition: background-color 160ms ease, color 160ms ease; width: 32px; }
+.mm-input__icon--interactive:hover { background: var(--mm-color-control-filled); color: var(--mm-color-text); }
+.mm-input--sm .mm-input__icon--interactive { flex-basis: 30px; margin-block: -6px; width: 30px; }
+.mm-input--xs .mm-input__icon--interactive { flex-basis: 28px; margin-block: -3px; width: 28px; }
+.mm-input__adornment { color: var(--mm-color-muted-text); flex: 0 0 auto; white-space: nowrap; }
+.mm-input__actions { align-items: center; align-self: stretch; display: inline-flex; flex: 0 0 auto; gap: 4px; margin-block: -9px; }
+.mm-input--sm .mm-input__actions { margin-block: -6px; }
+.mm-input--xs .mm-input__actions { margin-block: -3px; }
+.mm-input:has(.mm-input-password__actions) > .mm-input__actions { order: 2; }
+.mm-input:has(.mm-input-password__actions) > .mm-input__action { align-self: stretch; border-inline-start: 1px solid color-mix(in srgb, var(--mm-color-control-border) 35%, var(--mm-color-control-filled)); height: auto; margin-block: -9px; margin-inline-end: 0; order: 1; padding-inline: 8px; width: 32px; }
+.mm-input--sm:has(.mm-input-password__actions) > .mm-input__action { margin-block: -6px; padding-inline: 7px; width: 30px; }
+.mm-input--xs:has(.mm-input-password__actions) > .mm-input__action { margin-block: -3px; padding-inline: 6px; width: 28px; }
+.mm-input__action { align-items: center; align-self: stretch; background: transparent; border: 0; border-inline-start: 1px solid color-mix(in srgb, var(--mm-color-control-border) 35%, var(--mm-color-control-filled)); color: var(--mm-color-control-icon); cursor: pointer; display: inline-flex; height: auto; justify-content: center; margin-block: -9px; margin-inline-end: calc(-1 * var(--mm-space-control-gap)); padding: 0 8px; transition: background-color 160ms ease, color 160ms ease; width: 32px; }
+.mm-input__action:hover:not(:disabled) { background: var(--mm-color-control-filled); color: var(--mm-color-text); }
+.mm-input__action:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-focus) 22%, transparent); outline: 0; }
+.mm-input--sm .mm-input__action { margin-block: -6px; padding-inline: 7px; width: 30px; }
+.mm-input--xs .mm-input__action { margin-block: -3px; padding-inline: 6px; width: 28px; }
+.mm-input__loader { animation: mm-input-spin .8s linear infinite; border: 2px solid var(--mm-color-control-border); border-top-color: var(--mm-color-primary); border-radius: 50%; height: 16px; width: 16px; }
+.mm-input--disabled { cursor: not-allowed; opacity: .55; }
+.mm-input--readonly { cursor: default; }
+.mm-input--loading .mm-input__control { cursor: wait; }
+@keyframes mm-input-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .mm-input, .mm-input__loader { transition: none; animation-duration: 1.5s; } }

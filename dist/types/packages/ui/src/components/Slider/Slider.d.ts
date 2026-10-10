@@ -1,0 +1,40 @@
+import { type ChangeEvent, type ReactNode } from 'react';
+import './Slider.css';
+export type SliderSize = 'xs' | 'sm' | 'default';
+export type SliderMode = 'linear' | 'centered' | 'options';
+export type SliderOption = {
+    color?: string;
+    label?: ReactNode;
+    value: number | string;
+};
+export type SliderColorRange = {
+    from: string;
+    to: string;
+};
+export type SliderProps = {
+    'aria-label'?: string;
+    className?: string;
+    defaultValue?: number;
+    disabled?: boolean;
+    id?: string;
+    label?: ReactNode;
+    max?: number;
+    min?: number;
+    mode?: SliderMode;
+    onChange?: (value: number, event: ChangeEvent<HTMLInputElement>) => void;
+    onChangeEnd?: (value: number, event: ChangeEvent<HTMLInputElement>) => void;
+    onOptionChange?: (option: SliderOption, index: number, event: ChangeEvent<HTMLInputElement>) => void;
+    options?: Array<SliderOption | number | string>;
+    optionFormatter?: (option: SliderOption, index: number) => ReactNode;
+    colorRange?: SliderColorRange;
+    showColorSwatch?: boolean;
+    showDelta?: boolean;
+    showInitialValue?: boolean;
+    showValue?: boolean;
+    size?: SliderSize;
+    step?: number;
+    value?: number;
+    valueFormatter?: (value: number) => ReactNode;
+    resettable?: boolean;
+};
+export declare function Slider({ 'aria-label': ariaLabel, className, colorRange, defaultValue, disabled, id: providedId, label, max, min, mode, onChange, onChangeEnd, onOptionChange, options, optionFormatter, resettable, showColorSwatch, showDelta, showInitialValue, showValue, size, step, value, valueFormatter, }: SliderProps): import("react").JSX.Element;

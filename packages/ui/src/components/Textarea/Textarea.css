@@ -1,0 +1,21 @@
+.mm-textarea-field { color: var(--mm-color-text); display: grid; gap: 6px; font-family: var(--mm-font-family-sans); min-width: 220px; }
+.mm-textarea-field--full-width { width: 100%; }
+.mm-textarea-field__label { font-size: 14px; font-weight: var(--mm-font-weight-medium); line-height: 20px; }
+.mm-textarea-field__description, .mm-textarea-field__error, .mm-textarea-field__counter { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-textarea-field__description { color: var(--mm-color-muted-text); }
+.mm-textarea-field__error { color: var(--mm-color-danger-text); }
+.mm-textarea-field__counter { color: var(--mm-color-muted-text); margin-top: -2px; text-align: right; }
+.mm-textarea { background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); border-radius: var(--mm-radius-control); display: flex; min-width: 0; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.mm-textarea--filled { background: var(--mm-color-control-filled); border-color: transparent; }
+.mm-textarea:focus-within { border-color: var(--mm-color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-primary) 16%, transparent); }
+.mm-textarea--error { border-color: var(--mm-color-danger-text); }
+.mm-textarea--error:focus-within { border-color: var(--mm-color-danger-text); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-danger-text) 16%, transparent); }
+.mm-textarea__control { background: transparent; border: 0; color: inherit; flex: 1; font: var(--mm-font-weight-normal) 14px/20px var(--mm-font-family-sans); min-height: 100px; min-width: 0; outline: 0; padding: 12px 14px; width: 100%; }
+.mm-textarea--resize-none .mm-textarea__control { resize: none; }
+.mm-textarea--resize-vertical .mm-textarea__control { resize: vertical; }
+.mm-textarea--resize-both .mm-textarea__control { resize: both; }
+.mm-textarea--auto-resize .mm-textarea__control { resize: none; }
+.mm-textarea__control::placeholder { color: var(--mm-color-placeholder); }
+.mm-textarea__action { align-items: center; align-self: flex-start; background: transparent; border: 0; color: var(--mm-color-muted-text); cursor: pointer; display: inline-flex; height: 40px; justify-content: center; margin: 8px 6px 0 0; padding: 0; width: 24px; }
+.mm-textarea--disabled { cursor: not-allowed; opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .mm-textarea { transition: none; } }

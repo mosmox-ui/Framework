@@ -1,0 +1,26 @@
+import { type ReactNode } from 'react';
+import './AlertInline.css';
+export type AlertInlineVariant = 'neutral' | 'success' | 'warning' | 'danger';
+export type AlertInlineSize = 'sm' | 'default';
+export type AlertInlineDismissMode = 'icon' | 'button';
+export type AlertInlineExitAnimation = 'none' | 'top' | 'bottom' | 'left' | 'right';
+export type AlertInlineProps = {
+    'aria-label'?: string;
+    children?: ReactNode;
+    className?: string;
+    closeLabel?: string;
+    defaultOpen?: boolean;
+    dismissIcon?: ReactNode;
+    dismissLabel?: ReactNode;
+    dismissMode?: AlertInlineDismissMode;
+    fullWidth?: boolean;
+    icon?: ReactNode;
+    exitAnimation?: AlertInlineExitAnimation;
+    onClose?: () => void;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    size?: AlertInlineSize;
+    title?: ReactNode;
+    variant?: AlertInlineVariant;
+};
+export declare function AlertInline({ 'aria-label': ariaLabel, children, className, closeLabel, defaultOpen, dismissIcon, dismissLabel, dismissMode, exitAnimation, fullWidth, icon, onClose, onOpenChange, open: controlledOpen, size, title, variant, }: AlertInlineProps): import("react").JSX.Element | null;

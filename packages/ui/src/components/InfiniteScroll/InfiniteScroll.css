@@ -1,0 +1,16 @@
+.mm-infinite-scroll { --mm-infinite-scroll-height: auto; color: var(--mm-color-text, #0c1518); display: flex; flex-direction: column; max-height: var(--mm-infinite-scroll-height); min-width: 0; overflow: auto; position: relative; width: 100%; }
+.mm-infinite-scroll__content { min-width: 0; }
+.mm-infinite-scroll__sentinel { flex: 0 0 1px; min-height: 1px; min-width: 1px; pointer-events: none; }
+.mm-infinite-scroll__status { align-items: center; color: var(--mm-color-muted-text, #667085); display: flex; font-size: 13px; justify-content: center; line-height: 20px; min-height: 42px; padding: 10px 12px; text-align: center; }
+.mm-infinite-scroll--horizontal { flex-direction: row; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.mm-infinite-scroll--horizontal .mm-infinite-scroll__content { display: flex; flex: 0 0 auto; gap: 16px; }
+.mm-infinite-scroll--horizontal .mm-infinite-scroll__sentinel { align-self: stretch; min-height: 100%; }
+.mm-infinite-scroll--horizontal .mm-infinite-scroll__status { flex: 0 0 180px; min-height: 100%; min-width: 180px; }
+.mm-infinite-scroll--reverse .mm-infinite-scroll__content { display: flex; flex-direction: column-reverse; }
+.mm-infinite-scroll--horizontal.mm-infinite-scroll--reverse .mm-infinite-scroll__content { flex-direction: row-reverse; }
+.mm-infinite-scroll__loading { align-items: center; display: inline-flex; gap: 7px; }
+.mm-infinite-scroll__spinner { animation: mm-infinite-scroll-spin 800ms linear infinite; }
+.mm-infinite-scroll__error { align-items: center; display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.mm-infinite-scroll__retry { background: transparent; border: 1px solid var(--mm-color-control-border, #d0d5dd); border-radius: var(--mm-radius-control, 8px); color: var(--mm-color-primary, #003231); cursor: pointer; font: inherit; font-size: 12px; padding: 5px 10px; }.mm-infinite-scroll__retry:hover { background: var(--mm-color-control-selected, #f2f4f7); }.mm-infinite-scroll__retry:focus-visible { outline: 2px solid var(--mm-color-focus, #6366f1); outline-offset: 2px; }
+@keyframes mm-infinite-scroll-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .mm-infinite-scroll__spinner { animation: none; } }

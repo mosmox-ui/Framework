@@ -1,0 +1,30 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import type { ToastNotificationPosition } from '../ToastNotification';
+import './MiniToast.css';
+export type MiniToastProps = {
+    actionIcon?: ReactNode;
+    actionLabel?: ReactNode;
+    ariaLabel?: string;
+    children?: ReactNode;
+    className?: string;
+    defaultOpen?: boolean;
+    duration?: number | false;
+    icon?: ReactNode;
+    onAction?: () => void;
+    onClose?: () => void;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    position?: ToastNotificationPosition;
+    showAction?: boolean;
+    size?: MiniToastSize;
+    style?: CSSProperties;
+    width?: CSSProperties['width'];
+};
+export type MiniToastSize = 'sm' | 'default';
+export type MiniToastStackProps = {
+    children?: ReactNode;
+    className?: string;
+    position?: ToastNotificationPosition;
+};
+export declare function MiniToast({ actionIcon, actionLabel, ariaLabel, children, className, defaultOpen, duration, icon, onAction, onClose, onOpenChange, open, position, showAction, size, style, width, }: MiniToastProps): import("react").JSX.Element | null;
+export declare function MiniToastStack({ children, className, position }: MiniToastStackProps): import("react").JSX.Element;

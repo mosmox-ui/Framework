@@ -1,0 +1,46 @@
+import { type CSSProperties, type HTMLAttributes, type Ref, type UIEvent } from 'react';
+import './ScrollArea.css';
+export type ScrollAreaOrientation = 'vertical' | 'horizontal' | 'both';
+export type ScrollAreaScrollbar = 'auto' | 'always' | 'hover' | 'hidden';
+export type ScrollAreaSize = 'sm' | 'default' | 'lg';
+export type ScrollAreaVariant = 'plain' | 'bordered' | 'soft';
+export type ScrollAreaHandle = {
+    element: HTMLDivElement | null;
+    scrollTo: (options: ScrollToOptions) => void;
+    scrollToTop: (behavior?: ScrollBehavior) => void;
+    scrollToBottom: (behavior?: ScrollBehavior) => void;
+    scrollToStart: (behavior?: ScrollBehavior) => void;
+    scrollToEnd: (behavior?: ScrollBehavior) => void;
+};
+export type ScrollAreaProps = Omit<HTMLAttributes<HTMLDivElement>, 'onScroll'> & {
+    orientation?: ScrollAreaOrientation;
+    scrollbar?: ScrollAreaScrollbar;
+    size?: ScrollAreaSize;
+    variant?: ScrollAreaVariant;
+    height?: CSSProperties['height'];
+    maxHeight?: CSSProperties['maxHeight'];
+    width?: CSSProperties['width'];
+    maxWidth?: CSSProperties['maxWidth'];
+    fadeEdges?: boolean;
+    viewportRef?: Ref<HTMLDivElement>;
+    onScroll?: (event: UIEvent<HTMLDivElement>) => void;
+    onReachStart?: () => void;
+    onReachEnd?: () => void;
+    scrollThreshold?: number;
+};
+export declare const ScrollArea: import("react").ForwardRefExoticComponent<Omit<HTMLAttributes<HTMLDivElement>, "onScroll"> & {
+    orientation?: ScrollAreaOrientation;
+    scrollbar?: ScrollAreaScrollbar;
+    size?: ScrollAreaSize;
+    variant?: ScrollAreaVariant;
+    height?: CSSProperties["height"];
+    maxHeight?: CSSProperties["maxHeight"];
+    width?: CSSProperties["width"];
+    maxWidth?: CSSProperties["maxWidth"];
+    fadeEdges?: boolean;
+    viewportRef?: Ref<HTMLDivElement>;
+    onScroll?: (event: UIEvent<HTMLDivElement>) => void;
+    onReachStart?: () => void;
+    onReachEnd?: () => void;
+    scrollThreshold?: number;
+} & import("react").RefAttributes<ScrollAreaHandle>>;

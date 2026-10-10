@@ -1,0 +1,30 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import './Accordion.css';
+export type AccordionSize = 'sm' | 'default' | 'lg';
+export type AccordionVariant = 'default' | 'separated' | 'plain';
+export type AccordionItem = {
+    key: string;
+    label: ReactNode;
+    content: ReactNode;
+    description?: ReactNode;
+    icon?: ReactNode;
+    badge?: ReactNode;
+    disabled?: boolean;
+};
+export type AccordionValue = string | string[];
+export type AccordionProps = {
+    'aria-label'?: string;
+    items: AccordionItem[];
+    value?: AccordionValue;
+    defaultValue?: AccordionValue;
+    onChange?: (value: AccordionValue, item: AccordionItem) => void;
+    multiple?: boolean;
+    collapsible?: boolean;
+    size?: AccordionSize;
+    variant?: AccordionVariant;
+    iconPosition?: 'start' | 'end';
+    lazy?: boolean;
+    className?: string;
+    style?: CSSProperties;
+};
+export declare function Accordion({ 'aria-label': ariaLabel, items, value, defaultValue, onChange, multiple, collapsible, size, variant, iconPosition, lazy, className, style }: AccordionProps): import("react").JSX.Element;

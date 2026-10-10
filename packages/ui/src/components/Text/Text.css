@@ -1,0 +1,25 @@
+.mm-text-wrap { align-items: baseline; display: inline; }
+.mm-text--full-width { display: block; width: 100%; }
+.mm-text { color: var(--mm-color-text); font: inherit; margin: 0; }
+.mm-text--secondary { color: var(--mm-color-muted-text); }
+.mm-text--success { color: var(--mm-color-success); }
+.mm-text--warning { color: var(--mm-color-warning); }
+.mm-text--danger { color: var(--mm-color-danger); }
+.mm-text--strong { font-weight: var(--mm-font-weight-medium, 600); }
+.mm-text--italic { font-style: italic; }
+.mm-text--underline { text-decoration: underline; text-underline-offset: 2px; }
+.mm-text--delete { text-decoration: line-through; }
+.mm-text--mark { background: #fff1a8; border-radius: 2px; padding-inline: 2px; }
+.mm-text--code { background: var(--mm-color-control-filled); border: 1px solid var(--mm-color-control-border); border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; padding: 2px 5px; }
+.mm-text--disabled { color: var(--mm-color-muted-text); cursor: not-allowed; opacity: .55; }
+.mm-text-wrap--ellipsis { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+.mm-text-wrap--ellipsis .mm-text { overflow: hidden; text-overflow: ellipsis; white-space: inherit; }
+.mm-text__action { background: transparent; border: 0; color: var(--mm-color-primary); cursor: pointer; font: inherit; margin-left: 8px; padding: 0; }
+.mm-text-editable { align-items: flex-start; display: inline-flex; flex-wrap: wrap; gap: 8px; max-width: 100%; vertical-align: top; }
+.mm-text__editor { border: 1px solid var(--mm-color-control-border); border-radius: 6px; color: var(--mm-color-text); font: inherit; min-height: 64px; min-width: 240px; padding: 8px; resize: vertical; }
+h1.mm-text, h2.mm-text, h3.mm-text, h4.mm-text, h5.mm-text { line-height: 1.2; }
+h1.mm-text { font-size: clamp(32px, 5vw, 48px); }
+h2.mm-text { font-size: clamp(28px, 4vw, 38px); }
+h3.mm-text { font-size: clamp(24px, 3vw, 32px); }
+h4.mm-text { font-size: 24px; }
+h5.mm-text { font-size: 20px; }

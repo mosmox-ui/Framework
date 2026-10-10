@@ -1,0 +1,38 @@
+import { type CSSProperties, type ReactNode, type SyntheticEvent } from 'react';
+import './AudioPlayer.css';
+export type AudioPlayerSize = 'sm' | 'default' | 'lg';
+export type AudioSource = {
+    src: string;
+    type?: string;
+};
+export type AudioPlayerProps = {
+    'aria-label'?: string;
+    artist?: ReactNode;
+    artwork?: string;
+    autoPlay?: boolean;
+    className?: string;
+    compact?: boolean;
+    defaultPlaybackRate?: number;
+    defaultVolume?: number;
+    download?: boolean;
+    fallback?: ReactNode;
+    loop?: boolean;
+    muted?: boolean;
+    onEnded?: () => void;
+    onError?: (event: SyntheticEvent<HTMLAudioElement>) => void;
+    onPause?: () => void;
+    onPlay?: () => void;
+    onTimeUpdate?: (currentTime: number, duration: number) => void;
+    preload?: 'none' | 'metadata' | 'auto';
+    rates?: number[];
+    showPlaybackRateControl?: boolean;
+    showVolumeControl?: boolean;
+    skipSeconds?: number;
+    size?: AudioPlayerSize;
+    sources?: AudioSource[];
+    src?: string;
+    style?: CSSProperties;
+    title?: ReactNode;
+    width?: number | string;
+};
+export declare function AudioPlayer({ 'aria-label': ariaLabel, artist, artwork, autoPlay, className, compact, defaultPlaybackRate, defaultVolume, download, fallback, loop, muted, onEnded, onError, onPause, onPlay, onTimeUpdate, preload, rates, showPlaybackRateControl, showVolumeControl, skipSeconds, size, sources, src, style, title, width }: AudioPlayerProps): import("react").JSX.Element;

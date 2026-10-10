@@ -1,0 +1,25 @@
+import { type ReactNode } from 'react';
+import { type ButtonProps } from '../Button';
+import { type MenuEntry, type MenuProps } from '../Menu';
+import './ButtonMenu.css';
+export type ButtonMenuPlacement = 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end';
+export type ButtonMenuProps = {
+    'aria-label'?: string;
+    children?: ReactNode;
+    className?: string;
+    closeOnEscape?: boolean;
+    closeOnOutsideClick?: boolean;
+    closeOnSelect?: boolean;
+    defaultOpen?: boolean;
+    disabled?: boolean;
+    entries: MenuEntry[];
+    id?: string;
+    matchTriggerWidth?: boolean;
+    menuProps?: Omit<MenuProps, 'entries' | 'aria-label' | 'width'>;
+    menuWidth?: number | string;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    placement?: ButtonMenuPlacement;
+    triggerProps?: Omit<ButtonProps, 'children' | 'iconRight'>;
+};
+export declare function ButtonMenu({ 'aria-label': ariaLabel, children, className, closeOnEscape, closeOnOutsideClick, closeOnSelect, defaultOpen, disabled, entries, id, matchTriggerWidth, menuProps, menuWidth, onOpenChange, open: controlledOpen, placement, triggerProps, }: ButtonMenuProps): import("react").JSX.Element;

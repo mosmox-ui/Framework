@@ -1,0 +1,22 @@
+.mm-dialog.mm-confirmation-dialog { border-radius: var(--mm-radius-control); box-shadow: 0 16px 36px rgb(16 24 40 / 14%); width: min(var(--mm-confirmation-dialog-width, 480px), calc(100vw - 48px)); }
+.mm-dialog.mm-confirmation-dialog.mm-dialog--sm { width: 320px; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__header { padding: 28px 28px 0; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__content { padding: 22px 28px 28px; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__content:empty { display: none; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__footer { padding: 20px 28px 24px; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__footer-layout { justify-content: flex-end; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__footer-aside { margin-right: auto; }
+.mm-dialog.mm-confirmation-dialog .mm-dialog__actions { gap: 12px; }
+.mm-confirmation-dialog__header { align-items: flex-start; display: flex; gap: 20px; justify-content: space-between; width: 100%; }
+.mm-confirmation-dialog__heading { align-items: flex-start; display: flex; gap: 28px; min-width: 0; }
+.mm-confirmation-dialog__heading h2 { color: var(--mm-color-text); font: var(--mm-font-weight-medium) 17px/24px var(--mm-font-family-sans); margin: 0; }
+.mm-confirmation-dialog__heading p { color: var(--mm-color-muted-text); font-size: 14px; line-height: 21px; margin: 8px 0 0; }
+.mm-confirmation-dialog__icon { align-items: center; background: var(--mm-color-control-filled); border-radius: var(--mm-radius-control); color: var(--mm-color-primary); display: inline-flex; flex: 0 0 34px; height: 34px; justify-content: center; }
+.mm-confirmation-dialog__icon--warning { background: color-mix(in srgb, var(--mm-color-warning) 16%, var(--mm-color-surface)); color: var(--mm-color-warning-text); }
+.mm-confirmation-dialog__icon--danger { background: var(--mm-color-danger-background); color: var(--mm-color-danger-text); }
+
+@media (max-width: 640px) {
+  .mm-dialog.mm-confirmation-dialog .mm-dialog__header { padding: 22px 20px 0; }
+  .mm-dialog.mm-confirmation-dialog .mm-dialog__content { padding: 18px 20px 22px; }
+  .mm-dialog.mm-confirmation-dialog .mm-dialog__footer { padding: 16px 20px 20px; }
+}

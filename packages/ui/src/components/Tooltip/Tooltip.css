@@ -1,0 +1,44 @@
+.mm-tooltip { display: inline-flex; max-width: 100%; position: relative; vertical-align: middle; }
+.mm-tooltip__content { border-radius: var(--mm-radius-control); box-shadow: 0 8px 24px rgb(16 24 40 / 18%); color: var(--mm-color-white); display: inline-block; max-width: var(--mm-tooltip-max-width); padding: 8px 10px; pointer-events: none; position: absolute; white-space: normal; width: max-content; z-index: 1100; }
+.mm-tooltip--interactive .mm-tooltip__content { pointer-events: auto; }
+.mm-tooltip__content--sm { font-size: 12px; line-height: 16px; padding: 6px 8px; }
+.mm-tooltip__content--default { font-size: 13px; line-height: 18px; }
+.mm-tooltip__content--lg { font-size: 14px; line-height: 20px; padding: 10px 12px; }
+.mm-tooltip__content--dark { background: var(--mm-color-text); }
+.mm-tooltip__content--light { background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); box-shadow: 0 8px 24px rgb(16 24 40 / 12%); color: var(--mm-color-text); }
+.mm-tooltip__content--primary { background: var(--mm-color-primary); }
+.mm-tooltip__content--top, .mm-tooltip__content--top-start, .mm-tooltip__content--top-end { bottom: calc(100% + var(--mm-tooltip-offset)); }
+.mm-tooltip__content--top { left: 50%; transform: translateX(-50%); }
+.mm-tooltip__content--top-start { left: 0; }
+.mm-tooltip__content--top-end { right: 0; }
+.mm-tooltip__content--bottom, .mm-tooltip__content--bottom-start, .mm-tooltip__content--bottom-end { top: calc(100% + var(--mm-tooltip-offset)); }
+.mm-tooltip__content--bottom { left: 50%; transform: translateX(-50%); }
+.mm-tooltip__content--bottom-start { left: 0; }
+.mm-tooltip__content--bottom-end { right: 0; }
+.mm-tooltip__content--left, .mm-tooltip__content--left-start, .mm-tooltip__content--left-end { right: calc(100% + var(--mm-tooltip-offset)); }
+.mm-tooltip__content--left { top: 50%; transform: translateY(-50%); }
+.mm-tooltip__content--left-start { top: 0; }
+.mm-tooltip__content--left-end { bottom: 0; }
+.mm-tooltip__content--right, .mm-tooltip__content--right-start, .mm-tooltip__content--right-end { left: calc(100% + var(--mm-tooltip-offset)); }
+.mm-tooltip__content--right { top: 50%; transform: translateY(-50%); }
+.mm-tooltip__content--right-start { top: 0; }
+.mm-tooltip__content--right-end { bottom: 0; }
+.mm-tooltip__arrow { background: var(--mm-tooltip-arrow-color); display: block; height: 6px; pointer-events: none; position: absolute; width: 14px; z-index: 1; }
+.mm-tooltip__content--dark { --mm-tooltip-arrow-color: var(--mm-color-text); }
+.mm-tooltip__content--light { --mm-tooltip-arrow-color: var(--mm-color-surface); }
+.mm-tooltip__content--primary { --mm-tooltip-arrow-color: var(--mm-color-primary); }
+.mm-tooltip__content--light .mm-tooltip__arrow { filter: drop-shadow(0 1px 0 var(--mm-color-control-border)) drop-shadow(1px 0 0 var(--mm-color-control-border)) drop-shadow(-1px 0 0 var(--mm-color-control-border)); }
+.mm-tooltip__content--top .mm-tooltip__arrow { bottom: -6px; clip-path: polygon(0 0, 100% 0, 50% 100%); left: calc(50% - 7px); }
+.mm-tooltip__content--top-start .mm-tooltip__arrow { bottom: -6px; clip-path: polygon(0 0, 100% 0, 50% 100%); left: 14px; }
+.mm-tooltip__content--top-end .mm-tooltip__arrow { bottom: -6px; clip-path: polygon(0 0, 100% 0, 50% 100%); right: 14px; }
+.mm-tooltip__content--bottom .mm-tooltip__arrow { clip-path: polygon(50% 0, 100% 100%, 0 100%); left: calc(50% - 7px); top: -6px; }
+.mm-tooltip__content--bottom-start .mm-tooltip__arrow { clip-path: polygon(50% 0, 100% 100%, 0 100%); left: 14px; top: -6px; }
+.mm-tooltip__content--bottom-end .mm-tooltip__arrow { clip-path: polygon(50% 0, 100% 100%, 0 100%); right: 14px; top: -6px; }
+.mm-tooltip__content--left .mm-tooltip__arrow { clip-path: polygon(0 0, 0 100%, 100% 50%); height: 14px; right: -6px; top: calc(50% - 7px); width: 6px; }
+.mm-tooltip__content--left-start .mm-tooltip__arrow { clip-path: polygon(0 0, 0 100%, 100% 50%); height: 14px; right: -6px; top: 14px; width: 6px; }
+.mm-tooltip__content--left-end .mm-tooltip__arrow { bottom: 14px; clip-path: polygon(0 0, 0 100%, 100% 50%); height: 14px; right: -6px; width: 6px; }
+.mm-tooltip__content--right .mm-tooltip__arrow { clip-path: polygon(100% 0, 100% 100%, 0 50%); height: 14px; left: -6px; top: calc(50% - 7px); width: 6px; }
+.mm-tooltip__content--right-start .mm-tooltip__arrow { clip-path: polygon(100% 0, 100% 100%, 0 50%); height: 14px; left: -6px; top: 14px; width: 6px; }
+.mm-tooltip__content--right-end .mm-tooltip__arrow { bottom: 14px; clip-path: polygon(100% 0, 100% 100%, 0 50%); height: 14px; left: -6px; width: 6px; }
+.mm-tooltip--disabled { cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .mm-tooltip__content { transition: none; } }

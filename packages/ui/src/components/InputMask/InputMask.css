@@ -1,0 +1,4 @@
+.mm-input-mask-field { align-content: start; }
+.mm-input-mask-field .mm-input--xs { padding-inline: 6px; }
+.mm-input-mask-field .mm-input:has(.mm-input__icon--interactive) .mm-input__icon--leading { margin-inline-end: var(--mm-space-control-icon-gap); }
+.mm-input-mask-field button.mm-input__icon--interactive { border-block: 0; border-inline-end: 0; cursor: pointer; font: inherit; padding: 0; }

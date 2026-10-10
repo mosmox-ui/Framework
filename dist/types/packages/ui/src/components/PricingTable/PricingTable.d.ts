@@ -1,0 +1,46 @@
+import type { CSSProperties, ReactNode } from 'react';
+import './PricingTable.css';
+export type PricingTableSize = 'sm' | 'default' | 'lg';
+export type PricingTableVariant = 'cards' | 'bordered' | 'flat' | 'spotlight' | 'compact';
+export type PricingFeature = {
+    key?: string;
+    label: ReactNode;
+    included?: boolean;
+    tooltip?: ReactNode;
+    value?: ReactNode;
+    highlight?: boolean;
+};
+export type PricingPlan = {
+    key: string;
+    name: ReactNode;
+    price: ReactNode;
+    billing?: ReactNode;
+    description?: ReactNode;
+    features?: PricingFeature[];
+    action?: ReactNode;
+    actionLabel?: ReactNode;
+    badge?: ReactNode;
+    icon?: ReactNode;
+    popular?: boolean;
+    disabled?: boolean;
+    accent?: string;
+};
+export type PricingTableProps = {
+    'aria-label'?: string;
+    className?: string;
+    columns?: number;
+    currency?: string;
+    defaultSelectedKey?: string;
+    fullWidth?: boolean;
+    heading?: ReactNode;
+    onSelect?: (plan: PricingPlan) => void;
+    plans: PricingPlan[];
+    renderFeature?: (feature: PricingFeature, plan: PricingPlan) => ReactNode;
+    renderPlanAction?: (plan: PricingPlan) => ReactNode;
+    selectedKey?: string;
+    showFeatureStates?: boolean;
+    size?: PricingTableSize;
+    style?: CSSProperties;
+    variant?: PricingTableVariant;
+};
+export declare function PricingTable({ 'aria-label': ariaLabel, className, columns, currency, defaultSelectedKey, fullWidth, heading, onSelect, plans, renderFeature, renderPlanAction, selectedKey, showFeatureStates, size, style, variant, }: PricingTableProps): import("react").JSX.Element;

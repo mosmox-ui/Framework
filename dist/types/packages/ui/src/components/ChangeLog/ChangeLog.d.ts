@@ -1,0 +1,35 @@
+import { type ReactNode } from 'react';
+import './ChangeLog.css';
+export type ChangeLogSize = 'sm' | 'default' | 'lg';
+export type ChangeLogVariant = 'default' | 'timeline' | 'compact' | 'bordered';
+export type ChangeLogGroupBy = 'none' | 'date' | 'version' | 'category';
+export type ChangeLogStatus = 'added' | 'changed' | 'fixed' | 'removed' | 'deprecated' | 'security';
+export type ChangeLogEntry = {
+    id: string;
+    date: ReactNode;
+    title: ReactNode;
+    description?: ReactNode;
+    details?: ReactNode;
+    version?: ReactNode;
+    category?: ReactNode;
+    status?: ChangeLogStatus;
+    tags?: ReactNode[];
+    author?: ReactNode;
+    branch?: ReactNode;
+    href?: string;
+    breaking?: boolean;
+};
+export type ChangeLogProps = {
+    'aria-label'?: string;
+    className?: string;
+    entries: ChangeLogEntry[];
+    defaultExpandedIds?: string[];
+    expandedIds?: string[];
+    onExpandedChange?: (ids: string[], entry: ChangeLogEntry) => void;
+    size?: ChangeLogSize;
+    variant?: ChangeLogVariant;
+    groupBy?: ChangeLogGroupBy;
+    reverse?: boolean;
+    maxHeight?: number | string;
+};
+export declare function ChangeLog({ 'aria-label': ariaLabel, className, entries, defaultExpandedIds, expandedIds: controlledExpandedIds, onExpandedChange, size, variant, groupBy, reverse, maxHeight, }: ChangeLogProps): import("react").JSX.Element;

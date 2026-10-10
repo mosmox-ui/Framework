@@ -1,0 +1,14 @@
+.mm-empty { box-sizing: border-box; color: var(--mm-color-text); display: flex; justify-content: center; padding: 48px 24px; text-align: center; width: fit-content; }
+.mm-empty--full-width { width: 100%; }
+.mm-empty--bordered { border: 1px dashed var(--mm-color-control-border); border-radius: 12px; }
+.mm-empty__inner { align-items: center; display: flex; flex-direction: column; max-width: 560px; width: 100%; }
+.mm-empty__image { display: block; height: 176px; object-fit: contain; width: 176px; }
+.mm-empty__subtitle { color: var(--mm-color-muted-text); font-size: 12px; font-weight: var(--mm-font-weight-medium); letter-spacing: .04em; margin-top: 18px; text-transform: uppercase; }
+.mm-empty__title { font-size: 20px; font-weight: var(--mm-font-weight-medium); line-height: 1.25; margin: 12px 0 0; }
+.mm-empty__description { color: var(--mm-color-muted-text); font-size: 14px; line-height: 1.5; margin-top: 8px; }
+.mm-empty__content { color: var(--mm-color-text); margin-top: 20px; width: 100%; }
+.mm-empty__actions { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+.mm-empty--sm { padding: 28px 16px; }
+.mm-empty--sm .mm-empty__image { height: 112px; width: 112px; }
+.mm-empty--sm .mm-empty__title { font-size: 16px; }
+.mm-empty--sm .mm-empty__description { font-size: 13px; }

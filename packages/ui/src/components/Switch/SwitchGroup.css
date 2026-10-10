@@ -1,0 +1,6 @@
+.mm-switch-group { border: 0; color: var(--mm-color-text); display: grid; gap: 8px; margin: 0; min-width: 0; padding: 0; }
+.mm-switch-group__label { font-size: 15px; font-weight: var(--mm-font-weight-medium); line-height: 20px; padding: 0; }
+.mm-switch-group__options { display: grid; gap: 12px; }
+.mm-switch-group__description, .mm-switch-group__error { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-switch-group__description { color: var(--mm-color-muted-text); }
+.mm-switch-group__error { color: var(--mm-color-danger-text); }

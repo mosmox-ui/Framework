@@ -1,0 +1,23 @@
+.mm-radio-group { border: 0; color: var(--mm-color-text); display: grid; font-family: var(--mm-font-family-sans); margin: 0; min-width: 220px; padding: 0; }
+.mm-radio-group__label { font-size: 14px; font-weight: var(--mm-font-weight-medium); line-height: 20px; margin-bottom: 8px; padding: 0; }
+.mm-radio-group__options { display: flex; gap: 12px 24px; }
+.mm-radio-group__options--vertical { flex-direction: column; }
+.mm-radio-group__options--horizontal { flex-direction: row; flex-wrap: wrap; }
+.mm-radio, .mm-radio-field { color: var(--mm-color-text); }
+.mm-radio { align-items: flex-start; cursor: pointer; display: inline-flex; gap: 10px; min-height: 24px; position: relative; }
+.mm-radio > input { height: 1px; opacity: 0; position: absolute; width: 1px; }
+.mm-radio__control { background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); border-radius: 50%; flex: 0 0 18px; height: 18px; margin-top: 1px; position: relative; transition: border-color 160ms ease, box-shadow 160ms ease; width: 18px; }
+.mm-radio--sm .mm-radio__control { flex-basis: 16px; height: 16px; width: 16px; }
+.mm-radio--xs .mm-radio__control { flex-basis: 14px; height: 14px; width: 14px; }
+.mm-radio--sm .mm-radio__label { font-size: 13px; line-height: 18px; }
+.mm-radio--xs .mm-radio__label { font-size: 12px; line-height: 16px; }
+.mm-radio__label { font-size: 14px; line-height: 20px; }
+.mm-radio > input:checked + .mm-radio__control { border-color: var(--mm-color-primary); }
+.mm-radio > input:checked + .mm-radio__control::after { background: var(--mm-color-primary); border-radius: 50%; content: ''; height: 10px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 10px; }
+.mm-radio--sm > input:checked + .mm-radio__control::after { height: 8px; width: 8px; }
+.mm-radio--xs > input:checked + .mm-radio__control::after { height: 6px; width: 6px; }
+.mm-radio > input:focus-visible + .mm-radio__control { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-focus) 22%, transparent); }
+.mm-radio-field__description, .mm-radio-field__error, .mm-radio-group__error { font-size: 12px; line-height: 16px; margin: 4px 0 0 28px; }
+.mm-radio-field__description { color: var(--mm-color-muted-text); }
+.mm-radio-field__error, .mm-radio-group__error { color: var(--mm-color-danger-text); }
+.mm-radio--disabled { cursor: not-allowed; opacity: .55; }

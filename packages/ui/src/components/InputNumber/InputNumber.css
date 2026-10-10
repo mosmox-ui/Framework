@@ -1,0 +1,45 @@
+.mm-input-number-field { color: var(--mm-color-text); display: grid; gap: 6px; font-family: var(--mm-font-family-sans); max-width: 100%; min-width: 100px; width: 240px; }
+.mm-input-number-field--full-width { width: 100%; }
+.mm-input-number-field__label { font-size: 14px; font-weight: var(--mm-font-weight-medium); line-height: 20px; }
+.mm-input-number-field__description, .mm-input-number-field__error { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-input-number-field__description { color: var(--mm-color-muted-text); }
+.mm-input-number-field__error { color: var(--mm-color-danger-text); }
+.mm-input-number { align-items: center; background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); border-radius: var(--mm-radius-control); display: flex; gap: var(--mm-space-control-icon-gap); min-width: 0; overflow: hidden; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.mm-input-number:focus-within { border-color: var(--mm-color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-primary) 16%, transparent); }
+.mm-input-number--filled { background: var(--mm-color-control-filled); border-color: transparent; }
+.mm-input-number--error { border-color: var(--mm-color-danger-text); }
+.mm-input-number__control { background: transparent; border: 0; color: var(--mm-color-text); flex: 1; font: var(--mm-font-weight-normal) 14px/20px var(--mm-font-family-sans); min-width: 0; outline: 0; padding: 0; width: 100%; }
+.mm-input-number__control::-webkit-inner-spin-button, .mm-input-number__control::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.mm-input-number__icon { align-items: center; color: var(--mm-color-control-icon); display: inline-flex; flex: 0 0 var(--mm-size-icon); height: var(--mm-size-icon); justify-content: center; }
+.mm-input-number__adornment { color: var(--mm-color-muted-text); flex: 0 0 auto; white-space: nowrap; }
+.mm-input-number__icon + .mm-input-number__adornment { margin-inline-start: 4px; }
+.mm-input-number__controls { align-self: stretch; border-inline-start: 1px solid var(--mm-color-control-border); display: inline-flex; flex: 0 0 auto; flex-direction: row; }
+.mm-input-number__controls { margin-inline-end: -14px; }
+.mm-input-number__controls button { align-items: center; background: transparent; border: 0; color: var(--mm-color-control-icon); cursor: pointer; display: inline-flex; flex: 0 0 auto; justify-content: center; min-height: 16px; padding: 0 8px; }
+.mm-input-number__controls svg { height: 14px; width: 14px; }
+.mm-input-number__controls button + button { border-inline-start: 1px solid var(--mm-color-control-border); }
+.mm-input-number__controls button:hover:not(:disabled) { background: var(--mm-color-control-filled); color: var(--mm-color-text); }
+.mm-input-number__controls button:disabled { color: var(--mm-color-placeholder); cursor: not-allowed; opacity: .6; }
+.mm-input-number__controls button:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-focus) 22%, transparent); outline: 0; position: relative; z-index: 1; }
+.mm-input-number--xs { min-height: 28px; padding: 3px 6px; }
+.mm-input-number--xs .mm-input-number__controls { margin-block: -3px; margin-inline-end: -6px; }
+.mm-input-number--xs .mm-input-number__control { font-size: 12px; line-height: 16px; }
+.mm-input-number--xs .mm-input-number__controls button { padding-inline: 6px; }
+.mm-input-number--xs .mm-input-number__controls svg { height: 11px; width: 11px; }
+.mm-input-number--sm { min-height: 34px; padding: 6px 10px; }
+.mm-input-number--sm .mm-input-number__controls { margin-block: -6px; margin-inline-end: -10px; }
+.mm-input-number--sm .mm-input-number__control { font-size: 13px; line-height: 18px; }
+.mm-input-number--sm .mm-input-number__controls button { padding-inline: 7px; }
+.mm-input-number--sm .mm-input-number__controls svg { height: 12px; width: 12px; }
+.mm-input-number--default { min-height: 40px; padding: 9px 14px; }
+.mm-input-number--default .mm-input-number__controls { margin-block: -9px; }
+.mm-input-number--disabled { cursor: not-allowed; opacity: .55; }
+.mm-input-number--loading { cursor: wait; }
+.mm-input-number__loading { animation: mm-input-number-spin 800ms linear infinite; border: 2px solid var(--mm-color-control-border); border-top-color: var(--mm-color-primary); border-radius: 50%; display: inline-flex; flex: 0 0 14px; height: 14px; width: 14px; }
+.mm-input-number--readonly { cursor: default; }
+.mm-input-number button:focus-visible { outline: 0; }
+@keyframes mm-input-number-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .mm-input-number { transition: none; } .mm-input-number__loading { animation: none; } }
+.mm-input-number-field__label-row { align-items: center; display: flex; justify-content: space-between; }
+.mm-input-number-field__reset { background: transparent; border: 0; color: var(--mm-color-primary); cursor: pointer; font: inherit; font-size: 11px; padding: 0; text-decoration: underline; }
+.mm-input-number-field__reset:disabled { cursor: not-allowed; opacity: .5; }

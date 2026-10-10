@@ -1,0 +1,33 @@
+import { type MouseEvent, type ReactNode } from 'react';
+import './Breadcrumbs.css';
+export type BreadcrumbItem = {
+    href?: string;
+    icon?: ReactNode;
+    label: ReactNode;
+    current?: boolean;
+    disabled?: boolean;
+    onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+};
+export type BreadcrumbsSize = 'xs' | 'sm' | 'default';
+export type BreadcrumbsVariant = 'default' | 'muted' | 'pill';
+export type BreadcrumbsProps = {
+    'aria-label'?: string;
+    className?: string;
+    currentLabel?: ReactNode;
+    ellipsisLabel?: ReactNode;
+    expandLabel?: string;
+    homeIcon?: ReactNode;
+    hoverBackground?: boolean;
+    hoverLift?: boolean;
+    hoverUnderline?: boolean;
+    id?: string;
+    items: BreadcrumbItem[];
+    maxItems?: number;
+    onItemClick?: (item: BreadcrumbItem, index: number, event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+    renderItem?: (item: BreadcrumbItem, index: number, current: boolean) => ReactNode;
+    separator?: ReactNode;
+    showHouse?: boolean;
+    size?: BreadcrumbsSize;
+    variant?: BreadcrumbsVariant;
+};
+export declare function Breadcrumbs({ 'aria-label': ariaLabel, className, currentLabel, ellipsisLabel, expandLabel, homeIcon, hoverBackground, hoverLift, hoverUnderline, id, items, maxItems, onItemClick, renderItem, separator, showHouse, size, variant, }: BreadcrumbsProps): import("react").JSX.Element | null;

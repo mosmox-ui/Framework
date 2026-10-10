@@ -1,0 +1,13 @@
+.mm-keyboard-shortcut { align-items: center; color: var(--mm-color-text, #172523); display: inline-flex; font-family: var(--mm-font-family-sans, Inter, sans-serif); gap: 4px; vertical-align: middle; }
+.mm-keyboard-shortcut__part { align-items: center; display: inline-flex; gap: 4px; }
+.mm-keyboard-shortcut__separator { color: var(--mm-color-muted-text, #667673); font-size: .8em; }
+.mm-keyboard-shortcut kbd { align-items: center; background: var(--mm-color-surface, #fff); border: 1px solid var(--mm-color-outline-border, #d9dfdc); border-radius: 5px; box-shadow: 0 1px 0 var(--mm-color-outline-border, #d9dfdc); display: inline-flex; font: inherit; font-weight: 600; justify-content: center; line-height: 1; min-width: 1.7em; white-space: nowrap; }
+.mm-keyboard-shortcut--xs { font-size: 10px; }
+.mm-keyboard-shortcut--xs kbd { min-height: 18px; padding: 2px 4px; }
+.mm-keyboard-shortcut--sm { font-size: 11px; }
+.mm-keyboard-shortcut--sm kbd { min-height: 21px; padding: 3px 5px; }
+.mm-keyboard-shortcut--default { font-size: 12px; }
+.mm-keyboard-shortcut--default kbd { min-height: 25px; padding: 4px 6px; }
+.mm-keyboard-shortcut--outline kbd { background: transparent; border-color: currentColor; box-shadow: none; }
+.mm-keyboard-shortcut--solid kbd { background: var(--mm-color-text, #172523); border-color: var(--mm-color-text, #172523); box-shadow: none; color: var(--mm-color-surface, #fff); }
+.mm-keyboard-shortcut--disabled { cursor: not-allowed; opacity: .45; }

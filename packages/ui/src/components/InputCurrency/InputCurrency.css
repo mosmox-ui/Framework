@@ -1,0 +1,26 @@
+.mm-input-currency-field { color: var(--mm-color-text); display: grid; gap: 6px; min-width: 180px; width: 280px; }
+.mm-input-currency-field__label { font-size: 14px; font-weight: 600; line-height: 20px; }
+.mm-input-currency-field__description, .mm-input-currency-field__error { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-input-currency-field__description { color: var(--mm-color-muted-text); }
+.mm-input-currency-field__error { color: var(--mm-color-danger-text); }
+.mm-input-currency { align-items: center; background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); border-radius: var(--mm-radius-control); display: flex; gap: 8px; min-height: 40px; overflow: hidden; padding: 9px 12px; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.mm-input-currency:focus-within { border-color: var(--mm-color-primary); box-shadow: 0 0 0 3px rgb(0 50 49 / 14%); }
+.mm-input-currency-field--error .mm-input-currency { border-color: var(--mm-color-danger, #f04438); }
+.mm-input-currency__control { background: transparent; border: 0; color: var(--mm-color-text); flex: 1; font: 14px/20px var(--mm-font-family-sans); min-width: 0; outline: 0; padding: 0; width: 100%; }
+.mm-input-currency__adornment { color: var(--mm-color-muted-text); flex: 0 0 auto; white-space: nowrap; }
+.mm-input-currency__controls { align-self: stretch; border-inline-start: 1px solid var(--mm-color-control-border); display: flex; margin: -9px -12px -9px 0; }
+.mm-input-currency__controls button, .mm-input-currency__clear { align-items: center; background: transparent; border: 0; color: var(--mm-color-control-icon); cursor: pointer; display: inline-flex; justify-content: center; }
+.mm-input-currency__controls button { padding: 0 8px; }
+.mm-input-currency__controls button + button { border-inline-start: 1px solid var(--mm-color-control-border); }
+.mm-input-currency__controls button:hover:not(:disabled), .mm-input-currency__clear:hover { background: var(--mm-color-control-filled); color: var(--mm-color-text); }
+.mm-input-currency__controls button:disabled { color: var(--mm-color-placeholder); cursor: not-allowed; opacity: .6; }
+.mm-input-currency__clear { align-self: stretch; font-size: 20px; line-height: 1; margin-block: -9px; margin-inline-end: -8px; padding: 0 8px; }
+.mm-input-currency__loading { animation: mm-currency-spin 800ms linear infinite; border: 2px solid var(--mm-color-control-border); border-top-color: var(--mm-color-primary); border-radius: 50%; height: 14px; width: 14px; }
+.mm-input-currency-field--sm .mm-input-currency { min-height: 34px; padding: 6px 9px; }
+.mm-input-currency-field--sm .mm-input-currency__controls { margin-block: -6px; margin-inline-end: -9px; }
+.mm-input-currency-field--sm .mm-input-currency__clear { margin-block: -6px; }
+.mm-input-currency-field--lg .mm-input-currency { min-height: 48px; padding: 13px 14px; }
+.mm-input-currency-field--lg .mm-input-currency__controls { margin-block: -13px; margin-inline-end: -14px; }
+.mm-input-currency-field--lg .mm-input-currency__clear { margin-block: -13px; }
+.mm-input-currency-field--disabled { opacity: .55; }
+@keyframes mm-currency-spin { to { transform: rotate(360deg); } }

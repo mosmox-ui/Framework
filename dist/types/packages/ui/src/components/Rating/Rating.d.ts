@@ -1,0 +1,27 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import './Rating.css';
+export type RatingSize = 'xs' | 'sm' | 'default';
+export type RatingTone = 'primary' | 'warning' | 'success' | 'danger' | 'inherit';
+export type RatingProps = {
+    'aria-label'?: string;
+    max?: number;
+    value?: number | null;
+    defaultValue?: number;
+    onChange?: (value: number | null) => void;
+    onHover?: (value: number | null) => void;
+    allowHalf?: boolean;
+    allowClear?: boolean;
+    readOnly?: boolean;
+    disabled?: boolean;
+    loading?: boolean;
+    size?: RatingSize;
+    tone?: RatingTone;
+    icon?: ReactNode;
+    emptyIcon?: ReactNode;
+    label?: ReactNode;
+    showValue?: boolean;
+    valueFormatter?: (value: number, max: number) => ReactNode;
+    className?: string;
+    style?: CSSProperties;
+};
+export declare function Rating({ 'aria-label': ariaLabel, max, value, defaultValue, onChange, onHover, allowHalf, allowClear, readOnly, disabled, loading, size, tone, icon, emptyIcon, label, showValue, valueFormatter, className, style }: RatingProps): import("react").JSX.Element;

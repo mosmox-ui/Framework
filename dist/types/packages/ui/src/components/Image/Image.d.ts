@@ -1,0 +1,22 @@
+import { type ImgHTMLAttributes, type MouseEventHandler, type ReactNode } from 'react';
+import './Image.css';
+export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+export type ImageRadius = 'none' | 'sm' | 'default' | 'lg' | 'full';
+export type ImageOverlayPosition = 'top' | 'center' | 'bottom';
+export type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'className' | 'onClick'> & {
+    aspectRatio?: number | string;
+    bordered?: boolean;
+    className?: string;
+    disableHover?: boolean;
+    fallback?: ReactNode;
+    hoverDuration?: number | string;
+    hoverScale?: number;
+    imageClassName?: string;
+    onClick?: MouseEventHandler<HTMLSpanElement>;
+    overlay?: ReactNode;
+    overlayPosition?: ImageOverlayPosition;
+    radius?: ImageRadius;
+    showLoader?: boolean;
+    fit?: ImageFit;
+};
+export declare function Image({ aspectRatio, bordered, className, disableHover, fallback, fit, hoverDuration, hoverScale, imageClassName, onClick, onError, onLoad, overlay, overlayPosition, radius, showLoader, src, style, ...rest }: ImageProps): import("react").JSX.Element;

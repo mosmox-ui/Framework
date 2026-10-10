@@ -1,0 +1,22 @@
+import { type LabelHTMLAttributes, type ReactNode } from 'react';
+import './Label.css';
+export type LabelSize = 'xs' | 'sm' | 'default' | 'lg';
+export type LabelTone = 'default' | 'muted' | 'danger' | 'success' | 'warning';
+export type LabelWeight = 'normal' | 'medium' | 'semibold';
+export type LabelProps = Omit<LabelHTMLAttributes<HTMLLabelElement>, 'children'> & {
+    children?: ReactNode;
+    description?: ReactNode;
+    disabled?: boolean;
+    error?: ReactNode;
+    leadingIcon?: ReactNode;
+    optional?: boolean;
+    optionalLabel?: ReactNode;
+    required?: boolean;
+    requiredIndicator?: ReactNode;
+    size?: LabelSize;
+    tone?: LabelTone;
+    truncate?: boolean;
+    visuallyHidden?: boolean;
+    weight?: LabelWeight;
+};
+export declare function Label({ children, className, description, disabled, error, leadingIcon, optional, optionalLabel, required, requiredIndicator, size, tone, truncate, visuallyHidden, weight, ...props }: LabelProps): import("react").JSX.Element;

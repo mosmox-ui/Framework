@@ -1,0 +1,25 @@
+.mm-input-otp-field { color: var(--mm-color-text); display: grid; gap: 6px; font-family: var(--mm-font-family-sans); min-width: 220px; }
+.mm-input-otp-field--full-width { width: 100%; }
+.mm-input-otp-field__label { font-size: 14px; font-weight: var(--mm-font-weight-medium); line-height: 20px; }
+.mm-input-otp-field__description, .mm-input-otp-field__error { font-size: 12px; line-height: 16px; margin: 0; }
+.mm-input-otp-field__description { color: var(--mm-color-muted-text); }
+.mm-input-otp-field__error { color: var(--mm-color-danger-text); }
+.mm-input-otp { align-items: center; display: inline-flex; flex-wrap: wrap; gap: var(--mm-space-control-icon-gap); min-width: 0; }
+.mm-input-otp--default { min-height: 40px; }
+.mm-input-otp--sm { min-height: 34px; }
+.mm-input-otp--xs { min-height: 28px; }
+.mm-input-otp__unit { display: inline-flex; flex: 0 0 40px; height: 40px; }
+.mm-input-otp__control { background: var(--mm-color-surface); border: 1px solid var(--mm-color-control-border); border-radius: var(--mm-radius-control); box-sizing: border-box; color: var(--mm-color-text); font: var(--mm-font-weight-medium) 18px/24px var(--mm-font-family-sans); height: 100%; min-width: 0; outline: 0; padding: 0 4px; text-align: center; transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease; width: 100%; }
+.mm-input-otp__control::placeholder { color: var(--mm-color-placeholder); }
+.mm-input-otp__control:focus { border-color: var(--mm-color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-primary) 16%, transparent); }
+.mm-input-otp--filled .mm-input-otp__control { background: var(--mm-color-control-filled); border-color: transparent; }
+.mm-input-otp--error .mm-input-otp__control { border-color: var(--mm-color-danger-text); }
+.mm-input-otp--error .mm-input-otp__control:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-danger-text) 16%, transparent); }
+.mm-input-otp--disabled { cursor: not-allowed; opacity: .55; }
+.mm-input-otp--readonly .mm-input-otp__control { background: var(--mm-color-control-filled); }
+.mm-input-otp--sm .mm-input-otp__unit { flex-basis: 34px; height: 34px; }
+.mm-input-otp--sm .mm-input-otp__control { font-size: 16px; line-height: 20px; }
+.mm-input-otp--xs .mm-input-otp__unit { flex-basis: 28px; height: 28px; }
+.mm-input-otp--xs .mm-input-otp__control { font-size: 14px; line-height: 18px; }
+.mm-input-otp__separator { color: var(--mm-color-muted-text); display: inline-flex; flex: 0 0 auto; font-weight: var(--mm-font-weight-medium); margin-inline: 2px; }
+@media (max-width: 520px) { .mm-input-otp__unit { flex-basis: 36px; height: 36px; } .mm-input-otp { gap: 5px; } }

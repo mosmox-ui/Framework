@@ -1,0 +1,37 @@
+import { type ReactNode } from 'react';
+import './Lightbox.css';
+export type LightboxItem = {
+    src: string;
+    alt?: string;
+    caption?: ReactNode;
+    download?: string;
+    height?: number;
+    id?: string;
+    thumbnailSrc?: string;
+    title?: ReactNode;
+    width?: number;
+};
+export type LightboxFit = 'contain' | 'cover' | 'actual';
+export type LightboxVariant = 'dark' | 'glass' | 'light';
+export type LightboxProps = {
+    items: LightboxItem[];
+    'aria-label'?: string;
+    className?: string;
+    closeOnBackdrop?: boolean;
+    defaultIndex?: number;
+    downloadable?: boolean;
+    fit?: LightboxFit;
+    loop?: boolean;
+    onChange?: (index: number, item: LightboxItem) => void;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
+    showCaptions?: boolean;
+    showGallery?: boolean;
+    showCounter?: boolean;
+    showThumbnails?: boolean;
+    showToolbar?: boolean;
+    thumbSize?: number;
+    variant?: LightboxVariant;
+    zoom?: boolean;
+};
+export declare function Lightbox({ items, 'aria-label': ariaLabel, className, closeOnBackdrop, defaultIndex, downloadable, fit: providedFit, loop, onChange, onOpenChange, open: controlledOpen, showCaptions: providedShowClosedCaptioning, showCounter, showGallery, showThumbnails: providedShowThumbnails, showToolbar: providedShowToolbar, thumbSize, variant: providedVariant, zoom }: LightboxProps): import("react").JSX.Element | null;

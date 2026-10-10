@@ -1,0 +1,27 @@
+import { type ReactNode } from 'react';
+import './Progress.css';
+export type ProgressVariant = 'bar' | 'circle';
+export type ProgressSize = 'sm' | 'default' | 'lg';
+export type ProgressTone = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'inherit';
+export type ProgressLabelPosition = 'above' | 'below' | 'inside';
+export type ProgressLabelAlign = 'start' | 'center' | 'end' | 'progress';
+export type ProgressProps = {
+    'aria-label'?: string;
+    animated?: boolean;
+    className?: string;
+    indeterminate?: boolean;
+    label?: ReactNode;
+    labelAlign?: ProgressLabelAlign;
+    labelPosition?: ProgressLabelPosition;
+    max?: number;
+    min?: number;
+    showValue?: boolean;
+    size?: ProgressSize;
+    striped?: boolean;
+    thickness?: number;
+    tone?: ProgressTone;
+    value?: number;
+    valueFormatter?: (value: number, percentage: number) => ReactNode;
+    variant?: ProgressVariant;
+};
+export declare function Progress({ 'aria-label': ariaLabel, animated, className, indeterminate, label, labelAlign, labelPosition, max, min, showValue, size, striped, thickness, tone, value, valueFormatter, variant }: ProgressProps): import("react").JSX.Element;

@@ -1,0 +1,10 @@
+.mm-badge-indicator { display: inline-flex; max-width: 100%; position: relative; vertical-align: middle; }
+.mm-badge-indicator__badge { display: inline-flex; pointer-events: none; position: absolute; z-index: 1; }
+.mm-badge-indicator__badge--top-right { right: 0; top: 0; transform: translate(42%, -42%); }
+.mm-badge-indicator__badge--top-left { left: 0; top: 0; transform: translate(-42%, -42%); }
+.mm-badge-indicator__badge--bottom-right { bottom: 0; right: 0; transform: translate(42%, 42%); }
+.mm-badge-indicator__badge--bottom-left { bottom: 0; left: 0; transform: translate(-42%, 42%); }
+.mm-badge-indicator__badge--pulse::before { animation: mm-badge-indicator-pulse 1.6s ease-out infinite; border: 2px solid currentcolor; border-radius: 999px; content: ''; inset: -3px; opacity: .45; position: absolute; }
+.mm-badge-indicator__badge--pulse > * { position: relative; }
+@keyframes mm-badge-indicator-pulse { 0%, 35% { opacity: .45; transform: scale(.8); } 70%, 100% { opacity: 0; transform: scale(1.35); } }
+@media (prefers-reduced-motion: reduce) { .mm-badge-indicator__badge--pulse::before { animation: none; } }

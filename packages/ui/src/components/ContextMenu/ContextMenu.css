@@ -1,0 +1,5 @@
+.mm-context-menu { display: contents; }
+.mm-context-menu:focus-visible { outline: 2px solid var(--mm-color-focus); outline-offset: 2px; }
+.mm-context-menu--disabled { cursor: not-allowed; }
+.mm-context-menu__popover { left: 0; position: fixed; top: 0; z-index: 70; }
+.mm-context-menu__popover > .mm-menu { width: var(--mm-context-menu-width, 280px); }

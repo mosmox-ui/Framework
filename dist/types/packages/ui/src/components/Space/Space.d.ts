@@ -1,0 +1,28 @@
+import { type HTMLAttributes, type ReactNode } from 'react';
+import './Space.css';
+export type SpaceDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+export type SpaceAlign = 'normal' | 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
+export type SpaceJustify = 'normal' | 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'stretch';
+export type SpaceWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+export type SpaceTag = 'div' | 'span' | 'section' | 'nav' | 'ul' | 'ol';
+export type SpaceProps = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
+    children?: ReactNode;
+    direction?: SpaceDirection;
+    align?: SpaceAlign;
+    justify?: SpaceJustify;
+    wrap?: SpaceWrap;
+    gap?: number | string;
+    rowGap?: number | string;
+    columnGap?: number | string;
+    inline?: boolean;
+    fullWidth?: boolean;
+    fullHeight?: boolean;
+    flex?: string | number;
+    grow?: number;
+    shrink?: number;
+    basis?: number | string;
+    separator?: ReactNode;
+    separatorAriaHidden?: boolean;
+    as?: SpaceTag;
+};
+export declare function Space({ children, direction, align, justify, wrap, gap, rowGap, columnGap, inline, fullWidth, fullHeight, flex, grow, shrink, basis, separator, separatorAriaHidden, as, className, style, ...rest }: SpaceProps): import("react").JSX.Element;

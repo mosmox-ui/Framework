@@ -1,0 +1,24 @@
+import { type ReactNode } from 'react';
+import './Spinner.css';
+export type SpinnerSize = 'xs' | 'sm' | 'default' | 'lg' | 'xl';
+export type SpinnerVariant = 'ring' | 'dots' | 'bars' | 'pulse';
+export type SpinnerTone = 'primary' | 'secondary' | 'success' | 'danger' | 'light' | 'inherit';
+export type SpinnerLabelPosition = 'inline' | 'below';
+export type SpinnerProps = {
+    'aria-label'?: string;
+    className?: string;
+    label?: ReactNode;
+    labelPosition?: SpinnerLabelPosition;
+    max?: number;
+    min?: number;
+    overlay?: boolean;
+    size?: SpinnerSize;
+    speed?: number;
+    thickness?: number;
+    tone?: SpinnerTone;
+    track?: boolean;
+    value?: number;
+    variant?: SpinnerVariant;
+    fullscreen?: boolean;
+};
+export declare function Spinner({ 'aria-label': ariaLabel, className, label, labelPosition, max, min, overlay, size, speed, thickness, tone, track, value, variant, fullscreen }: SpinnerProps): import("react").JSX.Element;

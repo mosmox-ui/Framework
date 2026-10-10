@@ -1,0 +1,29 @@
+.mm-code-diff { --mm-code-diff-radius: 8px; --mm-code-diff-max-height: none; background: #101a21; border: 1px solid rgb(255 255 255 / 12%); border-radius: var(--mm-code-diff-radius); color: #d7e1e5; max-width: 100%; overflow: hidden; }
+.mm-code-diff__header, .mm-code-diff__split-labels { align-items: center; display: flex; justify-content: space-between; padding: 10px 14px; }
+.mm-code-diff__header { border-bottom: 1px solid rgb(255 255 255 / 12%); }
+.mm-code-diff__heading { align-items: center; display: flex; gap: 10px; min-width: 0; }
+.mm-code-diff__title { color: #f4f7f8; font-weight: 600; }
+.mm-code-diff__language, .mm-code-diff__split-labels { color: #91a5ad; font-size: 12px; }
+.mm-code-diff__copy { background: transparent; border: 1px solid rgb(255 255 255 / 18%); border-radius: 5px; color: inherit; cursor: pointer; font: inherit; font-size: 12px; padding: 5px 8px; }
+.mm-code-diff__copy:hover { background: rgb(255 255 255 / 9%); }
+.mm-code-diff__split-labels { background: rgb(255 255 255 / 4%); gap: 1px; justify-content: stretch; }
+.mm-code-diff__split-labels span { flex: 1; }
+.mm-code-diff__pre { margin: 0; max-height: var(--mm-code-diff-max-height); overflow: auto; padding: 10px 0; tab-size: 2; }
+.mm-code-diff__line { display: flex; min-width: max-content; padding: 2px 14px; }
+.mm-code-diff__line:hover { background: rgb(255 255 255 / 7%); }
+.mm-code-diff__numbers { color: #718892; min-width: 54px; padding-right: 12px; text-align: right; user-select: none; }
+.mm-code-diff__marker { color: #91a5ad; padding-right: 10px; user-select: none; }
+.mm-code-diff__content { white-space: pre; }
+.mm-code-diff__line--added { background: rgb(28 184 114 / 13%); }
+.mm-code-diff__line--added .mm-code-diff__marker { color: #6ee7a5; }
+.mm-code-diff__line--removed { background: rgb(235 87 87 / 13%); }
+.mm-code-diff__line--removed .mm-code-diff__marker { color: #ff9494; }
+.mm-code-diff--wrap .mm-code-diff__line { min-width: 0; white-space: pre-wrap; }
+.mm-code-diff--wrap .mm-code-diff__content { overflow-wrap: anywhere; white-space: pre-wrap; }
+.mm-code-diff--sm { font-size: 12px; }
+.mm-code-diff--lg { font-size: 15px; }
+.mm-code-diff--light, .mm-code-diff--github { background: #f8fafb; border-color: #d7e0e3; color: #243238; }
+.mm-code-diff--light .mm-code-diff__header, .mm-code-diff--github .mm-code-diff__header { border-color: #d7e0e3; }
+.mm-code-diff--light .mm-code-diff__title, .mm-code-diff--github .mm-code-diff__title { color: #182328; }
+.mm-code-diff--light .mm-code-diff__copy, .mm-code-diff--github .mm-code-diff__copy { border-color: #c7d1d5; }
+.mm-code-diff--light .mm-code-diff__line:hover, .mm-code-diff--github .mm-code-diff__line:hover { background: rgb(15 47 51 / 5%); }

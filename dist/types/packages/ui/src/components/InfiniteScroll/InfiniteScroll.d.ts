@@ -1,0 +1,25 @@
+import { type CSSProperties, type ReactNode } from 'react';
+import './InfiniteScroll.css';
+export type InfiniteScrollDirection = 'vertical' | 'horizontal';
+export type InfiniteScrollProps = {
+    children: ReactNode;
+    hasMore?: boolean;
+    loading?: boolean;
+    onLoadMore: () => void | Promise<void>;
+    threshold?: number;
+    rootMargin?: string;
+    initialLoad?: boolean;
+    disabled?: boolean;
+    direction?: InfiniteScrollDirection;
+    reverse?: boolean;
+    height?: number | string;
+    endMessage?: ReactNode;
+    loadingContent?: ReactNode;
+    error?: ReactNode;
+    onRetry?: () => void | Promise<void>;
+    retryLabel?: string;
+    ariaLabel?: string;
+    className?: string;
+    style?: CSSProperties;
+};
+export declare function InfiniteScroll({ children, hasMore, loading, onLoadMore, threshold, rootMargin, initialLoad, disabled, direction, reverse, height, endMessage, loadingContent, error, onRetry, retryLabel, ariaLabel, className, style, }: InfiniteScrollProps): import("react").JSX.Element;

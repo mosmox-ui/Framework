@@ -1,0 +1,16 @@
+.mm-theme-switcher { color: var(--mm-color-text, #0c1518); display: inline-flex; font-family: var(--mm-font-family-sans, ui-sans-serif, system-ui, sans-serif); }
+.mm-theme-switcher__segments { align-items: stretch; background: var(--mm-color-control-filled, #eef1f2); border: 1px solid var(--mm-color-control-border, #d0d5dd); border-radius: var(--mm-theme-switcher-radius, var(--mm-radius-control, 5px)); display: inline-flex; gap: 2px; padding: 3px; }
+.mm-theme-switcher__segment, .mm-theme-switcher__button { align-items: center; background: transparent; border: 0; border-radius: calc(var(--mm-theme-switcher-radius, var(--mm-radius-control, 5px)) - 1px); color: var(--mm-color-control-icon, var(--mm-color-muted-text, #667085)); cursor: pointer; display: inline-flex; font: inherit; gap: 6px; justify-content: center; outline: none; transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease; white-space: nowrap; }
+.mm-theme-switcher__segment:hover, .mm-theme-switcher__button:hover { color: var(--mm-color-text, #0c1518); }
+.mm-theme-switcher__segment:focus-visible, .mm-theme-switcher__button:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--mm-color-focus, #6366f1) 25%, transparent); }
+.mm-theme-switcher__segment.is-active { background: var(--mm-color-surface, #fff); box-shadow: 0 1px 3px color-mix(in srgb, var(--mm-color-text, #0c1518) 12%, transparent); color: var(--mm-color-text, #0c1518); }
+.mm-theme-switcher__button { background: var(--mm-color-surface, #fff); border: 1px solid var(--mm-color-control-border, #d0d5dd); box-shadow: 0 1px 2px color-mix(in srgb, var(--mm-color-text, #0c1518) 8%, transparent); padding: 8px 11px; }
+.mm-theme-switcher--xs { font-size: 11px; }
+.mm-theme-switcher--xs .mm-theme-switcher__segment, .mm-theme-switcher--xs .mm-theme-switcher__button { min-height: 24px; padding: 3px 5px; }
+.mm-theme-switcher--sm { font-size: 12px; }
+.mm-theme-switcher--sm .mm-theme-switcher__segment, .mm-theme-switcher--sm .mm-theme-switcher__button { min-height: 28px; padding: 5px 7px; }
+.mm-theme-switcher--default { font-size: 13px; }
+.mm-theme-switcher--default .mm-theme-switcher__segment { min-height: 34px; padding: 7px 9px; }
+.mm-theme-switcher--disabled { cursor: not-allowed; opacity: .5; }
+.mm-theme-switcher button:disabled { cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .mm-theme-switcher__segment, .mm-theme-switcher__button { transition: none; } }

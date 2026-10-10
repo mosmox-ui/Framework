@@ -1,0 +1,39 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/GoogleSansFlex-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/GoogleSansFlex-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/GoogleSansFlex-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/GoogleSansFlex-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/GoogleSansFlex-Bold.ttf') format('truetype');
+}

@@ -1,0 +1,27 @@
+import { type MouseEvent, type ReactNode } from 'react';
+import './Avatar.css';
+export type AvatarSize = 'xs' | 'sm' | 'default' | 'lg' | 'xl' | 'xxl';
+export type AvatarShape = 'circle' | 'rounded' | 'square';
+export type AvatarStatus = 'online' | 'offline' | 'busy' | 'away';
+export type AvatarVariant = 'solid' | 'soft' | 'outline';
+export type AvatarProps = {
+    'aria-label'?: string;
+    alt?: string;
+    children?: ReactNode;
+    className?: string;
+    disableHover?: boolean;
+    disabled?: boolean;
+    hoverScale?: boolean;
+    icon?: ReactNode;
+    image?: string;
+    initials?: string;
+    loading?: boolean;
+    name?: string;
+    onClick?: (event: MouseEvent<HTMLSpanElement>) => void;
+    shape?: AvatarShape;
+    size?: AvatarSize;
+    status?: AvatarStatus;
+    statusLabel?: string;
+    variant?: AvatarVariant;
+};
+export declare function Avatar({ 'aria-label': ariaLabel, alt, children, className, disableHover, disabled, hoverScale, icon, image, initials, loading, name, onClick, shape, size, status, statusLabel, variant }: AvatarProps): import("react").JSX.Element;
