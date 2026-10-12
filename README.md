@@ -79,3 +79,4 @@ npm run build
 
 - [GitHub repository](https://github.com/mosmox-ui/Framework)
 - [npm package](https://www.npmjs.com/package/@mosmox-ui/framework)
+- [**ui.mosmox.com/docs/**](https://ui.mosmox.com/docs/)

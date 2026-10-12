@@ -1,11 +1,12 @@
 {
   "name": "@mosmox-ui/framework",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React UI components for Mosmox UI.",
   "repository": {
     "type": "git",
     "url": "https://github.com/mosmox-ui/Framework.git"
   },
+  "homepage": "https://ui.mosmox.com/docs/",
   "private": false,
   "type": "module",
   "scripts": {
