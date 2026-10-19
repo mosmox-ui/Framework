@@ -6,6 +6,10 @@
 .mm-navigation-menu--vertical .mm-navigation-menu__list { flex-direction: column; min-width: 220px; }
 .mm-navigation-menu--wrap .mm-navigation-menu__list { flex-wrap: wrap; }
 .mm-navigation-menu__group { position: relative; }
+.mm-navigation-menu__section { display: contents; }
+.mm-navigation-menu__section-heading { color: var(--mm-color-muted-text); font-size: 12px; font-weight: var(--mm-font-weight-medium); letter-spacing: .04em; padding: 10px 11px 4px; text-transform: uppercase; }
+.mm-navigation-menu__group-separator { background: var(--mm-color-control-border); display: block; height: 1px; margin: 6px 4px; }
+.mm-navigation-menu--grouped .mm-navigation-menu__section-heading { display: block; }
 .mm-navigation-menu__separator { align-items: center; color: var(--mm-color-control-border); display: inline-flex; flex: 0 0 auto; justify-content: center; pointer-events: none; }
 .mm-navigation-menu--vertical .mm-navigation-menu__separator { min-height: 1px; width: 100%; }
 .mm-navigation-menu__item, .mm-navigation-menu__link { align-items: center; background: transparent; border: 1px solid transparent; border-radius: var(--mm-radius-control); color: inherit; display: flex; font: inherit; gap: 9px; justify-content: flex-start; min-height: 40px; padding: 8px 11px; text-align: left; transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 140ms ease; width: 100%; }
@@ -52,8 +56,13 @@
 .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list { min-width: 0; width: 100%; }
 .mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__item { justify-content: center; min-width: 0; padding-left: 3px; padding-right: 3px; }
 .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list > .mm-navigation-menu__group > .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__content, .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list > .mm-navigation-menu__group > .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__badge, .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list > .mm-navigation-menu__group > .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__arrow { display: none; }
+.mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__content, .mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__badge, .mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__arrow { display: none; }
 .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list > .mm-navigation-menu__group > .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__icon { margin-left: 0; margin-right: 0; }
+.mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section .mm-tooltip > .mm-navigation-menu__item > .mm-navigation-menu__icon { margin-left: 0; margin-right: 0; }
 .mm-navigation-menu--vertical.mm-navigation-menu--collapsed > .mm-navigation-menu__list > .mm-navigation-menu__group > .mm-tooltip { display: block; width: 100%; }
+.mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section .mm-tooltip { display: block; width: 100%; }
+.mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__section-heading { display: none; }
+.mm-navigation-menu--vertical.mm-navigation-menu--collapsed .mm-navigation-menu__group-separator { margin: 7px 4px; }
 .mm-navigation-menu--vertical .mm-navigation-menu__label { max-width: 100%; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mm-navigation-menu__submenu .mm-navigation-menu__item { min-height: 36px; width: 100%; }
 .mm-navigation-menu__group--open > .mm-navigation-menu__item { background: var(--mm-color-light-background); }
