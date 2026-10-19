@@ -45,7 +45,7 @@ export type { ToolbarDensity, ToolbarGroupProps, ToolbarItemProps, ToolbarMenuPr
 export { Lightbox } from './components/Lightbox';
 export type { LightboxFit, LightboxItem, LightboxProps, LightboxVariant } from './components/Lightbox';
 export { FileUpload } from './components/FileUpload';
-export type { FileUploadActions, FileUploadCropAspect, FileUploadCropShape, FileUploadEditorControl, FileUploadFile, FileUploadLocale, FileUploadOutputFormat, FileUploadPreview, FileUploadProps, FileUploadSizePreset, FileUploadStatus, FileUploadUploadResult, FileUploadVariant } from './components/FileUpload';
+export type { FileUploadActions, FileUploadCropAspect, FileUploadCropShape, FileUploadEditorAction, FileUploadEditorActionContext, FileUploadEditorControl, FileUploadFile, FileUploadLocale, FileUploadOutputFormat, FileUploadPreview, FileUploadProps, FileUploadSizePreset, FileUploadStatus, FileUploadUploadResult, FileUploadVariant } from './components/FileUpload';
 export { Form } from './components/Form';
 export type { FormActionsProps, FormFieldApi, FormFieldProps, FormInstance, FormLayout, FormProps, FormRule, FormSize, FormValidateTrigger, FormValues } from './components/Form';
 export { Breadcrumbs } from './components/Breadcrumbs';
@@ -103,7 +103,7 @@ export type { TextComponent, TextCopyable, TextEditable, TextEllipsis, TextHeadi
 export { Menu } from './components/Menu';
 export type { MenuContentEntry, MenuEntry, MenuItem, MenuProps, MenuSize, MenuVariant } from './components/Menu';
 export { NavigationMenu } from './components/NavigationMenu';
-export type { NavigationMenuItem, NavigationMenuMegaAside, NavigationMenuMegaGroup, NavigationMenuOrientation, NavigationMenuProps, NavigationMenuSize, NavigationMenuSubmenuBehavior, NavigationMenuVariant } from './components/NavigationMenu';
+export type { NavigationMenuGroup, NavigationMenuItem, NavigationMenuMegaAside, NavigationMenuMegaGroup, NavigationMenuOrientation, NavigationMenuProps, NavigationMenuSize, NavigationMenuSubmenuBehavior, NavigationMenuVariant } from './components/NavigationMenu';
 export { ProfileMenu } from './components/ProfileMenu';
 export type { ProfileMenuDisplay, ProfileMenuProps, ProfileMenuSize } from './components/ProfileMenu';
 export { Sidebar } from './components/Sidebar';

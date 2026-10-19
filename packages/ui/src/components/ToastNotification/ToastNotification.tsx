@@ -69,9 +69,9 @@ export function ToastNotification({
   const [closing, setClosing] = useState(false);
   const [paused, setPaused] = useState(false);
   const [remaining, setRemaining] = useState(typeof duration === 'number' ? duration : 0);
-  const startedAtRef = useRef<number | undefined>();
-  const timerRef = useRef<number | undefined>();
-  const exitTimerRef = useRef<number | undefined>();
+  const startedAtRef = useRef<number | undefined>(undefined);
+  const timerRef = useRef<number | undefined>(undefined);
+  const exitTimerRef = useRef<number | undefined>(undefined);
 
   const finishClose = useCallback(() => {
     if (!visible || !closing) return;

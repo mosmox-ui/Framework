@@ -22,6 +22,12 @@ export type NavigationMenuMegaAside = {
   content: ReactNode;
 };
 
+export type NavigationMenuGroup = {
+  key?: string;
+  label: ReactNode;
+  items: NavigationMenuItem[];
+};
+
 export type NavigationMenuItem = {
   key: string;
   label: ReactNode;
@@ -52,7 +58,8 @@ export type NavigationMenuProps = {
   collapseBreakpoint?: number;
   collapsedWidth?: number | string;
   onCollapsedChange?: (collapsed: boolean) => void;
-  items: NavigationMenuItem[];
+  items?: NavigationMenuItem[];
+  groups?: NavigationMenuGroup[];
   separator?: ReactNode;
   gap?: number | string;
   orientation?: NavigationMenuOrientation;
@@ -81,7 +88,7 @@ export function NavigationMenu({
   'aria-label': ariaLabel = 'Primary navigation', className, closeSubmenusOnMouseLeave: propCloseSubmenusOnMouseLeave, collapsed: controlledCollapsed, defaultCollapsed = false, collapseBreakpoint, collapsedWidth = 32, onCollapsedChange, items, separator, gap: propGap, orientation: propOrientation,
   size: propSize, variant: propVariant, activeKey: controlledActiveKey, defaultActiveKey,
   openKeys: controlledOpenKeys, defaultOpenKeys = [], onActiveChange, onOpenChange, onItemClick,
-  submenuBehavior: propSubmenuBehavior, submenuCloseDelay: propSubmenuCloseDelay, collapseSubmenus: propCollapseSubmenus, wrap = false, fullWidth = false, maxHeight,
+  submenuBehavior: propSubmenuBehavior, submenuCloseDelay: propSubmenuCloseDelay, collapseSubmenus: propCollapseSubmenus, wrap = false, fullWidth = false, maxHeight, groups,
 }: NavigationMenuProps) {
   const id = useId();
   const { components } = useConfig();
@@ -136,9 +143,14 @@ export function NavigationMenu({
 
   useEffect(() => () => clearSubmenuCloseTimer(), []);
 
+  const resolvedItems = items ?? [];
+  const verticalGroups = orientation === 'vertical' && Boolean(groups?.length);
+  const groupedItems = groups ?? [];
+  const allItems = verticalGroups ? groupedItems.flatMap((group) => group.items) : resolvedItems;
+
   useEffect(() => {
-    if (currentActiveKey && !findItem(items, currentActiveKey)) setActiveKey(undefined);
-  }, [items, currentActiveKey]);
+    if (currentActiveKey && !findItem(allItems, currentActiveKey)) setActiveKey(undefined);
+  }, [allItems, currentActiveKey]);
 
   useEffect(() => {
     if (!currentOpenKeys.length) return undefined;
@@ -197,7 +209,18 @@ export function NavigationMenu({
     return <Fragment key={`${id}-${item.key}`}>{separator && index > 0 ? <span aria-hidden="true" className="mm-navigation-menu__separator">{separator}</span> : null}<div className={cx('mm-navigation-menu__group', open && 'mm-navigation-menu__group--open', mega && item.megaMenuFullWidth && 'mm-navigation-menu__group--mega-full-width')}>{renderedContent}{nested && open ? (mega ? renderMegaMenu(item.megaMenu ?? [], item.megaMenuFullWidth, item.megaMenuAside, item.megaMenuFooter) : <div aria-label={`${String(item.label)} submenu`} className="mm-navigation-menu__submenu" role="menu">{renderItems(item.children ?? [], depth + 1)}</div>) : null}</div></Fragment>;
   });
 
-  return <nav ref={navigationRef} aria-label={ariaLabel} className={cx('mm-navigation-menu', `mm-navigation-menu--${orientation}`, `mm-navigation-menu--${size}`, `mm-navigation-menu--${variant}`, currentCollapsed && 'mm-navigation-menu--collapsed', wrap && 'mm-navigation-menu--wrap', fullWidth && 'mm-navigation-menu--full-width', collapseSubmenus && 'mm-navigation-menu--collapse-submenus', maxHeight !== undefined && 'mm-navigation-menu--scrollable', className)} onKeyDown={handleKeyDown} onMouseEnter={clearSubmenuCloseTimer} onMouseLeave={scheduleSubmenuClose} style={{ '--mm-navigation-menu-collapsed-width': typeof collapsedWidth === 'number' ? `${collapsedWidth}px` : collapsedWidth, '--mm-navigation-menu-max-height': typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight, '--mm-navigation-menu-gap': typeof gap === 'number' ? `${gap}px` : gap } as CSSProperties}><div className="mm-navigation-menu__list" role="menubar">{renderItems(items)}</div></nav>;
+  const renderSections = () => {
+    if (!verticalGroups) return renderItems(resolvedItems);
+    return groupedItems.map((group, index) => <Fragment key={group.key ?? `${id}-navigation-group-${index}`}>
+      {index > 0 ? <span aria-hidden="true" className="mm-navigation-menu__group-separator" /> : null}
+      <div aria-label={typeof group.label === 'string' ? group.label : undefined} className="mm-navigation-menu__section">
+        <div aria-hidden={currentCollapsed || undefined} className="mm-navigation-menu__section-heading">{group.label}</div>
+        {renderItems(group.items)}
+      </div>
+    </Fragment>);
+  };
+
+  return <nav ref={navigationRef} aria-label={ariaLabel} className={cx('mm-navigation-menu', `mm-navigation-menu--${orientation}`, `mm-navigation-menu--${size}`, `mm-navigation-menu--${variant}`, currentCollapsed && 'mm-navigation-menu--collapsed', verticalGroups && 'mm-navigation-menu--grouped', wrap && 'mm-navigation-menu--wrap', fullWidth && 'mm-navigation-menu--full-width', collapseSubmenus && 'mm-navigation-menu--collapse-submenus', maxHeight !== undefined && 'mm-navigation-menu--scrollable', className)} onKeyDown={handleKeyDown} onMouseEnter={clearSubmenuCloseTimer} onMouseLeave={scheduleSubmenuClose} style={{ '--mm-navigation-menu-collapsed-width': typeof collapsedWidth === 'number' ? `${collapsedWidth}px` : collapsedWidth, '--mm-navigation-menu-max-height': typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight, '--mm-navigation-menu-gap': typeof gap === 'number' ? `${gap}px` : gap } as CSSProperties}><div className="mm-navigation-menu__list" role="menubar">{renderSections()}</div></nav>;
 }
 
 function findItem(items: NavigationMenuItem[], key: string): NavigationMenuItem | undefined { for (const item of items) { if (item.key === key) return item; const found = item.children && findItem(item.children, key); if (found) return found; } return undefined; }
