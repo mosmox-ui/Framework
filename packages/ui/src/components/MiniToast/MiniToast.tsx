@@ -58,7 +58,7 @@ export function MiniToast({
   const [visible, setVisible] = useState(open ?? defaultOpen);
   const [closing, setClosing] = useState(false);
   const [remaining, setRemaining] = useState(typeof effectiveDuration === 'number' ? effectiveDuration : 0);
-  const exitTimerRef = useRef<number | undefined>();
+  const exitTimerRef = useRef<number | undefined>(undefined);
 
   const finishClose = useCallback(() => {
     if (!visible || !closing) return;

@@ -59,7 +59,7 @@ export function AlertInline({
   const isControlled = controlledOpen !== undefined;
   const [visibleOpen, setVisibleOpen] = useState(controlledOpen ?? defaultOpen);
   const [isClosing, setIsClosing] = useState(false);
-  const closeTimerRef = useRef<number | undefined>();
+  const closeTimerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     return () => {

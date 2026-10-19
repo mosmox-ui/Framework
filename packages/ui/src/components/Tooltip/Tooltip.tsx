@@ -51,8 +51,8 @@ export function Tooltip({
   const generatedId = useId();
   const tooltipId = `mm-tooltip-${generatedId}`;
   const rootRef = useRef<HTMLSpanElement>(null);
-  const openTimerRef = useRef<number | undefined>();
-  const closeTimerRef = useRef<number | undefined>();
+  const openTimerRef = useRef<number | undefined>(undefined);
+  const closeTimerRef = useRef<number | undefined>(undefined);
   const isControlled = controlledOpen !== undefined;
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const isOpen = !disabled && (isControlled ? controlledOpen : uncontrolledOpen);

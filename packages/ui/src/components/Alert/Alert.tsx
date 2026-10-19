@@ -71,7 +71,7 @@ export function Alert({
 }: AlertProps) {
   const [visibleOpen, setVisibleOpen] = useState(open ?? defaultOpen);
   const [isClosing, setIsClosing] = useState(false);
-  const closeTimerRef = useRef<number | undefined>();
+  const closeTimerRef = useRef<number | undefined>(undefined);
   const isControlled = open !== undefined;
 
   const beginClose = (afterClose?: () => void) => {
